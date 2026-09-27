@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>App Emergência - Rota Otimizada</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body, html { height: 100%; width: 100%; font-family: Arial, sans-serif; overflow: hidden; }
+        
+        #app-container { display: flex; height: 100vh; width: 100vw; }
+
+        #sidebar {
+            width: 300px;
+            background-color: #f8f9fa;
+            border-right: 3px solid #0000ff; 
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            z-index: 2;
+        }
+
+        #sidebar h2 {
+            background-color: #0000ff;
+            color: white;
+            padding: 15px;
+            font-size: 18px;
+            text-align: center;
+            margin: 0;
+        }
+
+        #lista-hospitais { list-style: none; padding: 0; margin: 0; }
+
+        .hospital-item {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .hospital-item:hover { background-color: #e2e6ea; }
+        
+        .hospital-destaque {
+            background-color: #e8f4fd; 
+            border-left: 5px solid #28a745; 
+        }
+
+        .hospital-item h4 { margin: 0 0 5px 0; color: #333; font-size: 15px; }
+        .hospital-item p { margin: 0; font-size: 12px; color: #666; }
+        .hospital-item .status { font-size: 12px; font-weight: bold; margin-top: 5px; display: none; }
+
+        .btn-ver-mais {
+            width: 90%;
+            margin: 15px auto;
+            display: block;
+            padding: 12px;
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .btn-ver-mais:hover { background-color: #5a6268; }
+
+        #map-container { flex: 1; position: relative; }
+        #map { height: 100%; width: 100%; z-index: 1; }
+
+        #btn-buscar {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            background-color: #ff0000; 
+            color: white;
+            border: 2px solid #cc0000;
+            width: 60px; 
+            height: 60px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+
+        #btn-buscar:active { transform: translateX(-50%) scale(0.90); }
+
+        @media (max-width: 600px) {
+            #app-container { flex-direction: column; }
+            #sidebar { width: 100%; height: 40%; border-right: none; border-bottom: 3px solid #0000ff; }
+            #map-container { height: 60%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app-container">
+        <div id="sidebar">
+            <h2>Hospitais Próximos</h2>
+            <ul id="lista-hospitais">
+                <li style="padding: 15px; text-align: center; color: #666;">Aperte o botão vermelho para iniciar.</li>
+            </ul>
+        </div>
+
+        <div id="map-container">
+            <div id="map"></div>
+            <button id="btn-buscar" title="Buscar Hospitais">🔍</button>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // ==========================================
+        // 1. CONFIGURAÇÃO INICIAL (GPS)
+        // ==========================================
+        const latUsuario = -20.2289;
+        const lngUsuario = -40.2733;
+
+        const map = L.map('map', { zoomControl: false }).setView([latUsuario, lngUsuario], 14);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
+
+        const userMarker = L.marker([latUsuario, lngUsuario]).addTo(map);
+        userMarker.bindPopup("<b>Você está aqui</b>").openPopup();
+
+        let rotaDesenhada = null;
+        let hospitaisEncontrados = [];
+
+        // ==========================================
+        // 2. SISTEMA ANTI-FALHAS (TIMEOUT FORÇADO)
+        // ==========================================
+        async function fetchComTentativas(query, elementoStatus = null) {
+            // Os 3 melhores servidores (Espelhos)
+            const servidores = [
+                'https://overpass-api.de/api/interpreter',
+                'https://z.overpass-api.de/api/interpreter',
+                'https://lz4.overpass-api.de/api/interpreter'
+            ];
+
+            for (let i = 0; i < servidores.length; i++) {
+                const url = `${servidores[i]}?data=${encodeURIComponent(query)}`;
+                try {
+                    // AbortController corta a ligação se o servidor demorar mais de 6 segundos
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(() => controller.abort(), 6000);
+                    
+                    const resposta = await fetch(url, { signal: controller.signal });
+                    clearTimeout(timeoutId); // Limpa o limite de tempo se respondeu depressa
+                    
+                    if (!resposta.ok) throw new Error("Servidor rejeitou ou demorou");
+                    return await resposta.json();
+                } catch (erro) {
+                    if (i === servidores.length - 1) throw erro; 
+                    
+                    if (elementoStatus) {
+                        elementoStatus.innerText = `Servidor ${i+1} lento. A tentar o próximo...`;
+                        elementoStatus.style.color = '#ff9900'; 
+                    }
+                }
+            }
+        }
+
+        // ==========================================
+        // 3. MIN-HEAP (ÁRVORE BINÁRIA)
+        // ==========================================
+        class MinHeap {
+            constructor() { this.heap = []; }
+            inserir(no) {
+                this.heap.push(no);
+                this.subir(this.heap.length - 1);
+            }
+            extrairMinimo() {
+                if (this.heap.length === 0) return null;
+                if (this.heap.length === 1) return this.heap.pop();
+                const min = this.heap[0];
+                this.heap[0] = this.heap.pop();
+                this.descer(0);
+                return min;
+            }
+            subir(index) {
+                while (index > 0) {
+                    let pai = Math.floor((index - 1) / 2);
+                    if (this.heap[pai].dist <= this.heap[index].dist) break;
+                    [this.heap[pai], this.heap[index]] = [this.heap[index], this.heap[pai]];
+                    index = pai;
+                }
+            }
+            descer(index) {
+                let tamanho = this.heap.length;
+                while (true) {
+                    let menor = index;
+                    let esq = 2 * index + 1;
+                    let dir = 2 * index + 2;
+                    if (esq < tamanho && this.heap[esq].dist < this.heap[menor].dist) menor = esq;
+                    if (dir < tamanho && this.heap[dir].dist < this.heap[menor].dist) menor = dir;
+                    if (menor === index) break;
+                    [this.heap[index], this.heap[menor]] = [this.heap[menor], this.heap[index]];
+                    index = menor;
+                }
+            }
+            vazia() { return this.heap.length === 0; }
+        }
+
+        // ==========================================
+        // 4. MOTOR DO GRAFO E DIJKSTRA
+        // ==========================================
+        function calcularDistancia(lat1, lon1, lat2, lon2) {
+            const R = 6371e3; 
+            const p1 = lat1 * Math.PI/180;
+            const p2 = lat2 * Math.PI/180;
+            const dp = (lat2-lat1) * Math.PI/180;
+            const dl = (lon2-lon1) * Math.PI/180;
+            const a = Math.sin(dp/2) * Math.sin(dp/2) + Math.cos(p1) * Math.cos(p2) * Math.sin(dl/2) * Math.sin(dl/2);
+            return R * (2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)));
+        }
+
+        function construirGrafo(dadosRuas) {
+            const nos = new Map();
+            const grafo = new Map();
+
+            dadosRuas.elements.forEach(el => {
+                if (el.type === 'node') {
+                    nos.set(el.id, { lat: el.lat, lon: el.lon });
+                    grafo.set(el.id, []);
+                }
+            });
+
+            dadosRuas.elements.forEach(el => {
+                if (el.type === 'way' && el.nodes) {
+                    const ehMaoUnica = el.tags && el.tags.oneway === 'yes';
+                    for (let i = 0; i < el.nodes.length - 1; i++) {
+                        const idA = el.nodes[i], idB = el.nodes[i + 1];
+                        if (nos.has(idA) && nos.has(idB)) {
+                            const dist = calcularDistancia(nos.get(idA).lat, nos.get(idA).lon, nos.get(idB).lat, nos.get(idB).lon);
+                            grafo.get(idA).push({ vizinho: idB, peso: dist });
+                            if (!ehMaoUnica) grafo.get(idB).push({ vizinho: idA, peso: dist }); 
+                        }
+                    }
+                }
+            });
+            return { grafo, nos };
+        }
+
+        function encontrarNoMaisProximo(lat, lng, nos) {
+            let menorDist = Infinity, noMaisProximo = null;
+            for (let [id, coord] of nos.entries()) {
+                const dist = calcularDistancia(lat, lng, coord.lat, coord.lon);
+                if (dist < menorDist) { menorDist = dist; noMaisProximo = id; }
+            }
+            return noMaisProximo;
+        }
+
+        function dijkstra(grafo, idOrigem, idDestino) {
+            const distancias = new Map();
+            const antecessores = new Map(); 
+            const fila = new MinHeap(); 
+
+            for (let id of grafo.keys()) distancias.set(id, Infinity);
+            distancias.set(idOrigem, 0);
+            
+            fila.inserir({ id: idOrigem, dist: 0 });
+
+            while (!fila.vazia()) {
+                const atual = fila.extrairMinimo(); 
+                if (atual.dist > distancias.get(atual.id)) continue;
+                if (atual.id === idDestino) break;
+
+                const vizinhos = grafo.get(atual.id) || [];
+                for (let aresta of vizinhos) {
+                    const novaDist = distancias.get(atual.id) + aresta.peso;
+                    if (novaDist < distancias.get(aresta.vizinho)) {
+                        distancias.set(aresta.vizinho, novaDist);
+                        antecessores.set(aresta.vizinho, atual.id); 
+                        fila.inserir({ id: aresta.vizinho, dist: novaDist });
+                    }
+                }
+            }
+            return { antecessores, distancias };
+        }
+
+        function adicionarHospitalNaLista(hosp, index, isDestaque = false) {
+            const listaUI = document.getElementById('lista-hospitais');
+            const li = document.createElement('li');
+            li.className = 'hospital-item' + (isDestaque ? ' hospital-destaque' : '');
+            
+            let htmlConteudo = `<h4>${isDestaque ? '⭐ ' : ''}${hosp.nome}</h4>`;
+            htmlConteudo += `<p>Distância linear: ${(hosp.distReta / 1000).toFixed(2)} km</p>`;
+            htmlConteudo += `<div class="status" id="status-${index}"></div>`;
+            
+            li.innerHTML = htmlConteudo;
+            li.addEventListener('click', () => tracarRotaParaHospital(hosp, index));
+            listaUI.appendChild(li);
+        }
+
+        // ==========================================
+        // 5. CLIQUE: BUSCAR HOSPITAIS
+        // ==========================================
+        document.getElementById('btn-buscar').addEventListener('click', async () => {
+            const btn = document.getElementById('btn-buscar');
+            const listaUI = document.getElementById('lista-hospitais');
+            btn.innerHTML = "⏳"; 
+            listaUI.innerHTML = '<li style="padding: 15px; text-align: center;">A procurar o hospital mais próximo...</li>';
+            
+            try {
+                const raioHospitais = 3500; // Reduzido para evitar bloqueios
+                const queryHospitais = `[out:json][timeout:10];(node["amenity"="hospital"](around:${raioHospitais},${latUsuario},${lngUsuario});node["amenity"="clinic"](around:${raioHospitais},${latUsuario},${lngUsuario}););out body;`;
+                
+                const dadosHospitais = await fetchComTentativas(queryHospitais);
+
+                if (dadosHospitais.elements.length === 0) {
+                    listaUI.innerHTML = '<li style="padding: 15px; text-align: center; color: red;">Nenhum hospital encontrado no raio de 3.5km.</li>';
+                    return;
+                }
+
+                hospitaisEncontrados = [];
+                dadosHospitais.elements.forEach(hosp => {
+                    if (hosp.lat && hosp.lon) {
+                        hosp.distReta = calcularDistancia(latUsuario, lngUsuario, hosp.lat, hosp.lon);
+                        hosp.nome = hosp.tags.name || "Unidade de Saúde";
+                        hospitaisEncontrados.push(hosp);
+                    }
+                });
+
+                hospitaisEncontrados.sort((a, b) => a.distReta - b.distReta);
+                
+                map.eachLayer((layer) => { if (layer instanceof L.Marker && layer !== userMarker) map.removeLayer(layer); });
+                listaUI.innerHTML = '';
+
+                hospitaisEncontrados.forEach(hosp => {
+                    const hospitalIcon = L.icon({
+                        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+                        iconAnchor: [12, 41], popupAnchor: [1, -34]
+                    });
+                    L.marker([hosp.lat, hosp.lon], { icon: hospitalIcon }).addTo(map).bindPopup(`<b>${hosp.nome}</b>`);
+                });
+
+                adicionarHospitalNaLista(hospitaisEncontrados[0], 0, true);
+                tracarRotaParaHospital(hospitaisEncontrados[0], 0);
+
+                if (hospitaisEncontrados.length > 1) {
+                    const btnMais = document.createElement('button');
+                    btnMais.innerText = `Mostrar outras ${hospitaisEncontrados.length - 1} opções`;
+                    btnMais.className = 'btn-ver-mais';
+                    
+                    btnMais.addEventListener('click', () => {
+                        btnMais.style.display = 'none'; 
+                        for (let i = 1; i < hospitaisEncontrados.length; i++) {
+                            adicionarHospitalNaLista(hospitaisEncontrados[i], i, false);
+                        }
+                    });
+                    
+                    listaUI.appendChild(btnMais);
+                }
+
+            } catch (erro) {
+                listaUI.innerHTML = '<li style="padding: 15px; text-align: center; color: red;">Todos os servidores públicos estão ocupados. Tente novamente daqui a pouco.</li>';
+                console.error(erro);
+            } finally {
+                btn.innerHTML = "🔍"; 
+            }
+        });
+
+        // ==========================================
+        // 6. CLIQUE: TRAÇAR ROTA
+        // ==========================================
+        async function tracarRotaParaHospital(hospitalAlvo, indexUI) {
+            document.querySelectorAll('.status').forEach(el => el.style.display = 'none');
+            const statusBox = document.getElementById(`status-${indexUI}`);
+            statusBox.style.display = 'block';
+            statusBox.innerText = 'A transferir mapa das ruas...';
+            statusBox.style.color = '#0066cc';
+
+            try {
+                let minLat = Math.min(latUsuario, hospitalAlvo.lat) - 0.005;
+                let maxLat = Math.max(latUsuario, hospitalAlvo.lat) + 0.005;
+                let minLng = Math.min(lngUsuario, hospitalAlvo.lon) - 0.005;
+                let maxLng = Math.max(lngUsuario, hospitalAlvo.lon) + 0.005;
+
+                const queryRuas = `[out:json][timeout:15];(way["highway"~"primary|secondary|tertiary|residential"](${minLat},${minLng},${maxLat},${maxLng}););out body;>;out skel qt;`;
+                
+                const dadosRuas = await fetchComTentativas(queryRuas, statusBox);
+
+                statusBox.innerText = 'A estruturar a malha viária...';
+                await new Promise(resolve => setTimeout(resolve, 50)); 
+                
+                const { grafo, nos } = construirGrafo(dadosRuas);
+
+                statusBox.innerText = 'A calcular (Min-Heap)...';
+                await new Promise(resolve => setTimeout(resolve, 50));
+
+                const noUsuario = encontrarNoMaisProximo(latUsuario, lngUsuario, nos);
+                const noHospital = encontrarNoMaisProximo(hospitalAlvo.lat, hospitalAlvo.lon, nos);
+                
+                const { antecessores, distancias } = dijkstra(grafo, noUsuario, noHospital);
+
+                const distanciaReal = distancias.get(noHospital);
+
+                const caminhoCoordenadas = [];
+                let atual = noHospital;
+                while (atual && atual !== noUsuario) {
+                    const coord = nos.get(atual);
+                    caminhoCoordenadas.unshift([coord.lat, coord.lon]);
+                    atual = antecessores.get(atual); 
+                }
+                
+                if (atual === noUsuario) {
+                    const coord = nos.get(noUsuario);
+                    caminhoCoordenadas.unshift([coord.lat, coord.lon]);
+
+                    if (rotaDesenhada) map.removeLayer(rotaDesenhada);
+                    rotaDesenhada = L.polyline(caminhoCoordenadas, { color: 'blue', weight: 6, opacity: 0.7 }).addTo(map);
+                    map.fitBounds(rotaDesenhada.getBounds(), { padding: [30, 30] });
+
+                    statusBox.style.color = '#28a745';
+                    statusBox.innerText = `Pronto! Distância de tráfego: ${(distanciaReal / 1000).toFixed(2)} km`;
+                } else {
+                    statusBox.style.color = 'red';
+                    statusBox.innerText = 'Caminho não suportado para viaturas.';
+                }
+
+            } catch (erro) {
+                statusBox.style.color = 'red';
+                statusBox.innerText = 'Erro de comunicação de rede.';
+                console.error(erro);
+            }
+        }
+    </script>
+</body>
+</html>
