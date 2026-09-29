@@ -70,7 +70,7 @@
         #map-container { flex: 1; position: relative; }
         #map { height: 100%; width: 100%; z-index: 1; }
 
-       #btn-buscar {
+        #btn-buscar {
             position: absolute;
             bottom: 30px;
             left: 50%;
@@ -81,7 +81,7 @@
             border: 2px solid #cc0000;
             width: 60px; 
             height: 60px;
-            border-radius: 50%;
+            border-radius: 50%; /* Botão Redondo */
             font-size: 24px;
             display: flex;
             align-items: center;
@@ -106,42 +106,101 @@
         <div id="sidebar">
             <h2>Hospitais Próximos</h2>
             <ul id="lista-hospitais">
-                <li style="padding: 15px; text-align: center; color: #666;">Aperte o botão vermelho para iniciar.</li>
+                <li style="padding: 15px; text-align: center; color: #666;">Aperte o botão SOS para iniciar.</li>
             </ul>
         </div>
 
         <div id="map-container">
             <div id="map"></div>
-            <button id="btn-buscar" title="Buscar Hospitais"></button>
+            <!-- Botão de Ambulância -->
+            <button id="btn-buscar" title="Buscar Hospitais">🚑</button>
         </div>
     </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
         // ==========================================
-        // 1. CONFIGURAÇÃO INICIAL (GPS)
+        // 1. CONFIGURAÇÃO INICIAL (GPS EM TEMPO REAL)
         // ==========================================
-        const latUsuario = -20.2289;
-        const lngUsuario = -40.2733;
+        let latUsuario = -20.2289; 
+        let lngUsuario = -40.2733;
 
         const map = L.map('map', { zoomControl: false }).setView([latUsuario, lngUsuario], 14);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
 
-        const userMarker = L.marker([latUsuario, lngUsuario]).addTo(map);
-        userMarker.bindPopup("<b>Você está aqui</b>").openPopup();
+        const iconeGPS = L.divIcon({
+            className: 'gps-marker',
+            html: '<div style="background-color: #007aff; width: 18px; height: 18px; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 8px rgba(0,0,0,0.5);"></div>',
+            iconSize: [18, 18],
+            iconAnchor: [9, 9]
+        });
 
+        const userMarker = L.marker([latUsuario, lngUsuario], { icon: iconeGPS }).addTo(map);
+        userMarker.bindPopup("<b>Você está aqui</b>").openPopup();
+        
         let rotaDesenhada = null;
         let hospitaisEncontrados = [];
 
+        // Rastreio via Satélite
+        if ('geolocation' in navigator) {
+            navigator.geolocation.watchPosition(
+                (posicao) => {
+                    latUsuario = posicao.coords.latitude;
+                    lngUsuario = posicao.coords.longitude;
+                    userMarker.setLatLng([latUsuario, lngUsuario]);
+                },
+                (erro) => { console.warn("Aviso de permissão de GPS:", erro.message); },
+                { enableHighAccuracy: true, maximumAge: 0, timeout: 5000 }
+            );
+        }
+
         // ==========================================
-        // 2. MIN-HEAP (ÁRVORE BINÁRIA)
+        // 2. BANCO DE DADOS LOCAL (INDEXED-DB)
+        // ==========================================
+        const DB_NAME = "EmergenciaAppDB";
+        
+        function abrirBanco() {
+            return new Promise((resolve, reject) => {
+                const request = indexedDB.open(DB_NAME, 1);
+                request.onerror = () => reject("Erro ao abrir banco");
+                request.onsuccess = (e) => resolve(e.target.result);
+                request.onupgradeneeded = (e) => {
+                    const db = e.target.result;
+                    if (!db.objectStoreNames.contains('malha_viaria')) {
+                        db.createObjectStore('malha_viaria');
+                    }
+                };
+            });
+        }
+
+        async function salvarNoBanco(chave, dados) {
+            const db = await abrirBanco();
+            return new Promise((resolve, reject) => {
+                const tx = db.transaction('malha_viaria', 'readwrite');
+                const store = tx.objectStore('malha_viaria');
+                store.put(dados, chave);
+                tx.oncomplete = () => resolve();
+                tx.onerror = () => reject();
+            });
+        }
+
+        async function lerDoBanco(chave) {
+            const db = await abrirBanco();
+            return new Promise((resolve, reject) => {
+                const tx = db.transaction('malha_viaria', 'readonly');
+                const store = tx.objectStore('malha_viaria');
+                const request = store.get(chave);
+                request.onsuccess = () => resolve(request.result);
+                request.onerror = () => reject();
+            });
+        }
+
+        // ==========================================
+        // 3. MIN-HEAP (ÁRVORE BINÁRIA)
         // ==========================================
         class MinHeap {
             constructor() { this.heap = []; }
-            inserir(no) {
-                this.heap.push(no);
-                this.subir(this.heap.length - 1);
-            }
+            inserir(no) { this.heap.push(no); this.subir(this.heap.length - 1); }
             extrairMinimo() {
                 if (this.heap.length === 0) return null;
                 if (this.heap.length === 1) return this.heap.pop();
@@ -175,7 +234,7 @@
         }
 
         // ==========================================
-        // 3. MOTOR DO GRAFO E DIJKSTRA
+        // 4. MOTOR DO GRAFO E DIJKSTRA
         // ==========================================
         function calcularDistancia(lat1, lon1, lat2, lon2) {
             const R = 6371e3; 
@@ -255,18 +314,16 @@
             const listaUI = document.getElementById('lista-hospitais');
             const li = document.createElement('li');
             li.className = 'hospital-item' + (isDestaque ? ' hospital-destaque' : '');
-            
             let htmlConteudo = `<h4>${isDestaque ? '⭐ ' : ''}${hosp.nome}</h4>`;
             htmlConteudo += `<p>Distância linear: ${(hosp.distReta / 1000).toFixed(2)} km</p>`;
             htmlConteudo += `<div class="status" id="status-${index}"></div>`;
-            
             li.innerHTML = htmlConteudo;
             li.addEventListener('click', () => tracarRotaParaHospital(hosp, index));
             listaUI.appendChild(li);
         }
 
         // ==========================================
-        // 4. CLIQUE: BUSCAR HOSPITAIS (BANCO LOCAL)
+        // 5. CLIQUE: BUSCAR HOSPITAIS (BANCO LOCAL)
         // ==========================================
         document.getElementById('btn-buscar').addEventListener('click', async () => {
             const btn = document.getElementById('btn-buscar');
@@ -279,11 +336,9 @@
                 const dadosHospitais = await resposta.json();
 
                 hospitaisEncontrados = [];
-                
                 dadosHospitais.elements.forEach(hosp => {
                     if (hosp.lat && hosp.lon) {
                         const distReta = calcularDistancia(latUsuario, lngUsuario, hosp.lat, hosp.lon);
-                        
                         if (distReta <= 10000) {
                             hosp.distReta = distReta;
                             hosp.nome = hosp.tags.name || "Unidade de Saúde";
@@ -299,15 +354,12 @@
 
                 hospitaisEncontrados.sort((a, b) => a.distReta - b.distReta);
                 
-                // Limpa rota e pinos antigos, mantendo mapa de fundo e GPS
                 if (rotaDesenhada) map.removeLayer(rotaDesenhada);
                 map.eachLayer((layer) => { 
                     if (layer instanceof L.Marker && layer !== userMarker) map.removeLayer(layer); 
                 });
                 
                 listaUI.innerHTML = '';
-
-                // Apenas preenche a lista e processa o primeiro hospital
                 adicionarHospitalNaLista(hospitaisEncontrados[0], 0, true);
                 tracarRotaParaHospital(hospitaisEncontrados[0], 0);
 
@@ -315,38 +367,31 @@
                     const btnMais = document.createElement('button');
                     btnMais.innerText = `Mostrar outras ${hospitaisEncontrados.length - 1} opções`;
                     btnMais.className = 'btn-ver-mais';
-                    
                     btnMais.addEventListener('click', () => {
                         btnMais.style.display = 'none'; 
                         for (let i = 1; i < hospitaisEncontrados.length; i++) {
                             adicionarHospitalNaLista(hospitaisEncontrados[i], i, false);
                         }
                     });
-                    
                     listaUI.appendChild(btnMais);
                 }
-
             } catch (erro) {
-                listaUI.innerHTML = '<li style="padding: 15px; text-align: center; color: red;">Erro ao aceder ao banco local. Está a usar o Live Server?</li>';
                 console.error(erro);
             } finally {
-                btn.innerHTML = ""; 
+                btn.innerHTML = "🚑"; 
             }
         });
 
         // ==========================================
-        // 5. CLIQUE: TRAÇAR ROTA (100% OFFLINE E INSTANTÂNEO)
+        // 6. CLIQUE: TRAÇAR ROTA (COM INDEXED-DB)
         // ==========================================
         async function tracarRotaParaHospital(hospitalAlvo, indexUI) {
             document.querySelectorAll('.status').forEach(el => el.style.display = 'none');
-            
-            // Remove realce visual dos outros itens da lista
             document.querySelectorAll('.hospital-item').forEach(el => {
                 el.classList.remove('hospital-destaque');
                 el.querySelector('h4').innerText = el.querySelector('h4').innerText.replace('⭐ ', '');
             });
 
-            // Adiciona realce visual ao item clicado
             const itemClicado = document.querySelectorAll('.hospital-item')[indexUI];
             if (itemClicado) {
                 itemClicado.classList.add('hospital-destaque');
@@ -356,41 +401,52 @@
 
             const statusBox = document.getElementById(`status-${indexUI}`);
             statusBox.style.display = 'block';
-            statusBox.innerText = 'A carregar mapa viário local...';
-            statusBox.style.color = '#0066cc';
 
             try {
-                // 1. Apaga apenas a rota azul antiga
-                if (rotaDesenhada) {
-                    map.removeLayer(rotaDesenhada);
-                }
-
-                // 2. Apaga apenas os pinos vermelhos antigos
+                if (rotaDesenhada) map.removeLayer(rotaDesenhada);
                 map.eachLayer((layer) => { 
-                    if (layer instanceof L.Marker && layer !== userMarker) {
-                        map.removeLayer(layer); 
-                    }
+                    if (layer instanceof L.Marker && layer !== userMarker) map.removeLayer(layer); 
                 });
 
-                // 3. Adiciona O PIN ÚNICO do hospital alvo no mapa
                 const hospitalIcon = L.icon({
                     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
                     iconAnchor: [12, 41], popupAnchor: [1, -34]
                 });
                 
                 L.marker([hospitalAlvo.lat, hospitalAlvo.lon], { icon: hospitalIcon })
-                    .addTo(map)
-                    .bindPopup(`<b>${hospitalAlvo.nome}</b>`)
-                    .openPopup();
+                    .addTo(map).bindPopup(`<b>${hospitalAlvo.nome}</b>`).openPopup();
 
-                // LÊ O BANCO DE RUAS LOCAL
-                const respostaRuas = await fetch('ruas_serra.json');
-                const dadosRuas = await respostaRuas.json();
-
-                statusBox.innerText = 'A estruturar o Grafo em memória...';
-                await new Promise(resolve => setTimeout(resolve, 10));
+                // LÓGICA DO BANCO DE DADOS
+                statusBox.innerText = 'A verificar Banco de Dados...';
+                statusBox.style.color = '#0066cc';
                 
-                const { grafo, nos } = construirGrafo(dadosRuas);
+                let grafo, nos;
+                let dadosSalvos = await lerDoBanco('grafo_ruas');
+
+                if (!dadosSalvos) {
+                    statusBox.innerText = 'Instalação inicial. Lendo arquivo (Pode demorar)...';
+                    // ATENÇÃO: Se o seu arquivo se chama ruas_es.json, mude o nome aqui!
+                    const respostaRuas = await fetch('ruas_serra.json'); 
+                    const dadosRuas = await respostaRuas.json();
+
+                    statusBox.innerText = 'A compilar rotas para o Banco...';
+                    await new Promise(r => setTimeout(r, 10)); 
+                    
+                    const estrutura = construirGrafo(dadosRuas);
+                    const grafoArray = Array.from(estrutura.grafo.entries());
+                    const nosArray = Array.from(estrutura.nos.entries());
+                    
+                    statusBox.innerText = 'A salvar no Banco de Dados...';
+                    await salvarNoBanco('grafo_ruas', { grafo: grafoArray, nos: nosArray });
+                    
+                    grafo = estrutura.grafo;
+                    nos = estrutura.nos;
+                } else {
+                    statusBox.innerText = 'A carregar mapa do Banco de Dados...';
+                    await new Promise(r => setTimeout(r, 10)); 
+                    grafo = new Map(dadosSalvos.grafo);
+                    nos = new Map(dadosSalvos.nos);
+                }
 
                 statusBox.innerText = 'A calcular Rota (Min-Heap)...';
                 await new Promise(resolve => setTimeout(resolve, 10));
@@ -425,7 +481,7 @@
 
             } catch (erro) {
                 statusBox.style.color = 'red';
-                statusBox.innerText = 'Erro ao ler arquivo "ruas_serra.json".';
+                statusBox.innerText = 'Erro crítico. Verifique o console.';
                 console.error(erro);
             }
         }
