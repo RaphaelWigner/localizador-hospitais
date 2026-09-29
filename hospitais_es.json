@@ -1,0 +1,3979 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-09-28T17:38:51Z",
+    "timestamp_areas_base": "2026-09-27T13:54:01Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 402588719,
+      "lat": -19.8215448,
+      "lon": -40.3660561,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde da Família"
+      }
+    },
+    {
+      "type": "node",
+      "id": 583339444,
+      "lat": -18.4205525,
+      "lon": -39.7094822,
+      "tags": {
+        "amenity": "hospital",
+        "healthcare": "hospital"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1070090661,
+      "lat": -20.3355889,
+      "lon": -40.305682,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1071067052,
+      "lat": -20.1562327,
+      "lon": -40.2523773,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade Básica de Saúde de Porto Canoa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2093014627,
+      "lat": -20.3363861,
+      "lon": -40.2975458,
+      "tags": {
+        "amenity": "clinic",
+        "emergency": "no",
+        "healthcare": "clinic",
+        "name": "Clínica Vila Velha"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2364276233,
+      "lat": -19.9310615,
+      "lon": -40.1486176,
+      "tags": {
+        "amenity": "clinic",
+        "emergency": "no",
+        "healthcare": "clinic",
+        "name:signed": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2411982147,
+      "lat": -19.9415588,
+      "lon": -40.5924022,
+      "tags": {
+        "IJSN:tipoUnidad": "Hospital Geral",
+        "addr:city": "Santa Teresa",
+        "addr:housenumber": "417",
+        "addr:place": "Jardim da Montanha",
+        "addr:postcode": "29650-000",
+        "addr:street": "Avenida das Acácias",
+        "addr:suburb": "Jardim da Montanha",
+        "amenity": "hospital",
+        "contact:phone": "+55 27 3259-1113",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "Hospital Madre Regina Protmann"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2481834105,
+      "lat": -21.0233242,
+      "lon": -41.6529168,
+      "tags": {
+        "IJSN:tipoUnidad": "Hospital Geral",
+        "addr:city": "São José do Calçado",
+        "addr:place": "Centro",
+        "addr:postcode": "29470-000",
+        "addr:street": "Rua Doutor José Fernandes Medina",
+        "addr:suburb": "Centro",
+        "amenity": "hospital",
+        "contact:phone": "+55 28 3556-1606",
+        "healthcare": "hospital",
+        "name": "Hospital São José",
+        "short_name": "IESP"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2482497525,
+      "lat": -18.4810188,
+      "lon": -39.9267355,
+      "tags": {
+        "amenity": "clinic",
+        "emergency": "no",
+        "healthcare": "clinic",
+        "name": "Posto de Saúde"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2491521712,
+      "lat": -20.3348314,
+      "lon": -40.2929158,
+      "tags": {
+        "amenity": "clinic",
+        "emergency": "no",
+        "healthcare": "clinic",
+        "name": "Clínica de Olhos"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2506133350,
+      "lat": -20.2269561,
+      "lon": -40.2815918,
+      "tags": {
+        "amenity": "clinic",
+        "emergency": "no",
+        "healthcare": "clinic",
+        "name": "UBS André Carloni"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2574819732,
+      "lat": -20.3353693,
+      "lon": -40.3013762,
+      "tags": {
+        "amenity": "clinic",
+        "emergency": "no",
+        "healthcare": "clinic",
+        "name": "Clínica Santa Isabel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2574841651,
+      "lat": -20.3358697,
+      "lon": -40.2980207,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Gastro Pediatria Alergia Alimentar e Clínica de Vacinação"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2798950632,
+      "lat": -20.8309422,
+      "lon": -40.6963777,
+      "tags": {
+        "addr:city": "Anchieta",
+        "addr:housenumber": "59",
+        "addr:postcode": "29230-000",
+        "addr:street": "Rua Elpídio Barbosa",
+        "addr:suburb": "Iriri",
+        "alt_name": "Unidade de Saúde da Família de Iriri",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade de Saúde da Família de Manuel das Neves Abrantes",
+        "operator": "Município de Anchieta",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2819612595,
+      "lat": -20.4620638,
+      "lon": -40.4882707,
+      "tags": {
+        "IJSN:tipoAgrup": "Unidade Básica de Saúde",
+        "addr:city": "Viana",
+        "addr:place": "Araçatiba",
+        "addr:postcode": "29135-000",
+        "addr:street": "Rua Francisco Palassi",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3255-6001",
+        "healthcare": "clinic",
+        "name": "Unidade Básica Saúde de Araçatiba",
+        "short_name": "US"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2822010435,
+      "lat": -20.3819637,
+      "lon": -40.6242602,
+      "tags": {
+        "addr:city": "Domingos Martins",
+        "addr:postcode": "29263-000",
+        "addr:street": "Rua Joanito Campos",
+        "addr:suburb": "Santa Isabel",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade Básica de Saúde de Santa Isabel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2847210754,
+      "lat": -20.144882,
+      "lon": -41.2890493,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2851411344,
+      "lat": -21.1507688,
+      "lon": -41.5670264,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2851417054,
+      "lat": -21.1534758,
+      "lon": -41.5666914,
+      "tags": {
+        "IJSN:tipoUnidad": "Hospital Geral",
+        "addr:city": "Apiacá",
+        "addr:housenumber": "45",
+        "addr:place": "Centro",
+        "addr:postcode": "29450-000",
+        "addr:street": "Avenida Jerônimo Monteiro",
+        "amenity": "hospital",
+        "contact:phone": "+55 28 3557-1393",
+        "healthcare": "hospital",
+        "name": "Hospital José Monteiro"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2856648504,
+      "lat": -21.0318217,
+      "lon": -40.9143992,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2859343358,
+      "lat": -19.8191255,
+      "lon": -40.2816993,
+      "tags": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Pronto Socorro do Hospital São Camilo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2859366443,
+      "lat": -19.8249442,
+      "lon": -40.2586612,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Posto de Saúde"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2880899650,
+      "lat": -18.5822355,
+      "lon": -39.7386345,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2880899657,
+      "lat": -18.5930367,
+      "lon": -39.7322011,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2882807544,
+      "lat": -18.4353936,
+      "lon": -39.931236,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2888097266,
+      "lat": -18.9893505,
+      "lon": -39.9992369,
+      "tags": {
+        "addr:city": "Jaguaré",
+        "addr:suburb": "Barra Seca",
+        "amenity": "clinic",
+        "healthcare": "clinic"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2997780441,
+      "lat": -20.3308383,
+      "lon": -40.3373734,
+      "tags": {
+        "IJSN:tipoUnidad": "Centro de Saúde/Unidade Básica",
+        "addr:city": "Vila Velha",
+        "addr:place": "Paul",
+        "addr:postcode": "29115-045",
+        "addr:street": "Estrada Jerônimo Monteiro",
+        "alt_name": "Unidade de Saúde de Paul",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3326-4201",
+        "healthcare": "clinic",
+        "name": "Unidade Básica de Saúde Ermogenis Marinho dos Santos",
+        "operator": "PMVV",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3058562492,
+      "lat": -18.4156771,
+      "lon": -41.0340548,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3086724796,
+      "lat": -20.6721105,
+      "lon": -41.0116882,
+      "tags": {
+        "addr:city": "Vargem Alta",
+        "addr:postcode": "29295-000",
+        "addr:street": "Rua Padre Antônio Maria",
+        "addr:suburb": "Centro",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "healthcare:speciality": "general",
+        "name": "Pronto Atendimento Municipal Octacílio Geraldo do Carmo",
+        "operator": "Município de Vargem Alta",
+        "operator:type": "public",
+        "phone": "+55 28 3528 1123"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3092984601,
+      "lat": -20.3172959,
+      "lon": -40.8046343,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3092984637,
+      "lat": -20.2874889,
+      "lon": -40.815413,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3104238309,
+      "lat": -20.315913,
+      "lon": -40.3105612,
+      "tags": {
+        "amenity": "clinic",
+        "emergency": "no",
+        "healthcare": "physiotherapist",
+        "name": "CLIMEF - Clínica de Fisioterapia"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3189357215,
+      "lat": -18.8650878,
+      "lon": -41.1240384,
+      "tags": {
+        "IJSN:tipoUnidad": "Unidade Mista",
+        "addr:city": "Mantenópolis",
+        "addr:housenumber": "1",
+        "addr:place": "Centro",
+        "addr:postcode": "29770-000",
+        "addr:street": "Rua Jaime dos Santos Neves",
+        "amenity": "hospital",
+        "contact:phone": "+55 27 3758-1122",
+        "healthcare": "hospital",
+        "name": "Hospital e Maternidade Nossa Senhora das Dores"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3196331189,
+      "lat": -18.319016,
+      "lon": -40.4037602,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3327287421,
+      "lat": -19.0689378,
+      "lon": -40.9674453,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade Sanitária Doutor Alois Gobbo",
+        "operator": "PMARN",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3327287422,
+      "lat": -19.0603925,
+      "lon": -41.0155889,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade Sanitária Santa Bárbara",
+        "operator": "PMARN",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3327287423,
+      "lat": -19.0588989,
+      "lon": -41.0236335,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde da Família Padre Pedro",
+        "operator": "PMARN",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3327287424,
+      "lat": -18.9578595,
+      "lon": -40.971668,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde da Família Vila Palmerino",
+        "operator": "PMARN",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3327287425,
+      "lat": -19.0556986,
+      "lon": -41.0161469,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade do Programa Saúde da Família",
+        "operator": "PMARN",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3329392638,
+      "lat": -19.5159756,
+      "lon": -41.0178538,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "psychotherapist",
+        "name": "Centro de Atenção Psicosocial de Baixo Guandu",
+        "operator": "PMBG",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3329392639,
+      "lat": -19.5135621,
+      "lon": -41.0141863,
+      "tags": {
+        "addr:housenumber": "281",
+        "addr:street": "Avenida Alvares Rodrigues da Matta",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Centro de Saúde Dilman Neto Ferreira",
+        "operator": "PMBG",
+        "ref:CNES": "2445611",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3329392643,
+      "lat": -19.5084669,
+      "lon": -41.0277882,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde da Família Rosário I",
+        "operator": "PMBG",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3329392644,
+      "lat": -19.5199496,
+      "lon": -41.0156042,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde da Família de Operário",
+        "operator": "PMBG",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3329392645,
+      "lat": -19.514539,
+      "lon": -41.0025602,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde da Família de São José",
+        "operator": "PMBG",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3329392646,
+      "lat": -19.5129786,
+      "lon": -41.0221679,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde da Família de São Vicente",
+        "operator": "PMBG",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3329392647,
+      "lat": -19.5149246,
+      "lon": -41.0029297,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde de São José",
+        "operator": "PMBG",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3353305052,
+      "lat": -20.3329841,
+      "lon": -40.2878546,
+      "tags": {
+        "IJSN:tipoUnidad": "Centro de Atenção Psicossocial",
+        "addr:postcode": "29100-260",
+        "addr:street": "Rua Telmo Torres",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3239-9857",
+        "healthcare": "psychotherapist",
+        "name": "Centro de Atenção Psicosocial de Vila Velha",
+        "operator": "PMVV",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3353305056,
+      "lat": -20.3374441,
+      "lon": -40.3184484,
+      "tags": {
+        "IJSN:tipoUnidad": "Centro de Saúde/Unidade Básica",
+        "addr:city": "Vila Velha",
+        "addr:place": "Dom João Batista",
+        "addr:postcode": "29120-180",
+        "addr:street": "Rua Imperatriz Leopoldinense",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3139-9042",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde de Dom João Batista",
+        "operator": "PMVV",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3353305057,
+      "lat": -20.3493179,
+      "lon": -40.3372359,
+      "tags": {
+        "IJSN:tipoUnidad": "Centro de Saúde/Unidade Básica",
+        "addr:city": "Vila Velha",
+        "addr:country": "BR",
+        "addr:place": "Santa Rita",
+        "addr:postcode": "29118-450",
+        "addr:state": "ES",
+        "addr:street": "Avenida Fernado Antônio da Silveira",
+        "alt_name": "Unidade de Saúde de Santa Rita",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3139-9035",
+        "healthcare": "clinic",
+        "name": "Unidade Básica de Saúde Athaide Mesquita da Silva",
+        "operator": "PMVV",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3353305058,
+      "lat": -20.3300166,
+      "lon": -40.3491324,
+      "tags": {
+        "IJSN:tipoUnidad": "Centro de Saúde/Unidade Básica",
+        "addr:city": "Vila Velha",
+        "addr:place": "São Torquato",
+        "addr:postcode": "29114-440",
+        "addr:street": "Rua São Pedro",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3388-3549;+55 27 3244-0387",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde de São Torquato",
+        "operator": "PMVV",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3353305059,
+      "lat": -20.3730499,
+      "lon": -40.35418,
+      "tags": {
+        "IJSN:tipoUnidad": "Centro de Saúde/Unidade Básica",
+        "addr:city": "Vila Velha",
+        "addr:country": "BR",
+        "addr:place": "Vale Encantado",
+        "addr:postcode": "29113-300",
+        "addr:state": "ES",
+        "addr:street": "Rua São Gabriel da Palha",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3381-4836;+55 27 3388-3548",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde de Vale Encantado",
+        "operator": "PMVV",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3353305061,
+      "lat": -20.3645838,
+      "lon": -40.313922,
+      "tags": {
+        "IJSN:tipoUnidad": "Centro de Saúde/Unidade Básica",
+        "addr:city": "Vila Velha",
+        "addr:country": "BR",
+        "addr:place": "Vila Nova",
+        "addr:postcode": "29105-020",
+        "addr:state": "ES",
+        "addr:street": "Avenida Altemar Dutra",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3389-1388",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde de Vila Nova",
+        "operator": "PMVV",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3358899859,
+      "lat": -20.6489456,
+      "lon": -40.4999999,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde Jader Avelar Boghi"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3359604125,
+      "lat": -19.9316707,
+      "lon": -40.6014059,
+      "tags": {
+        "amenity": "clinic",
+        "emergency": "no",
+        "healthcare": "dentist",
+        "name": "Consultório Odontológico"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3404175494,
+      "lat": -20.2999576,
+      "lon": -40.3174012,
+      "tags": {
+        "IJSN:gestao": "Dupla",
+        "IJSN:jurisdicao": "Federal",
+        "IJSN:tipoUnidad": "Hospital Geral",
+        "addr:city": "Vitória",
+        "addr:housenumber": "1355",
+        "addr:place": "Santa Cecília",
+        "addr:postcode": "29042-715",
+        "addr:street": "Avenida Marechal Campos",
+        "amenity": "hospital",
+        "contact:phone": "+55 27 3335-7101",
+        "healthcare": "hospital",
+        "name": "Hospital das Clínicas"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3460746430,
+      "lat": -20.280985,
+      "lon": -40.4230683,
+      "tags": {
+        "addr:city": "Cariacica",
+        "addr:place": "Roças Velhas",
+        "addr:postcode": "29156-970",
+        "addr:street": "Rodovia José Sette",
+        "alt_name": "Hospital de Custodia Tratamento Psiquiátrico",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3254-5434",
+        "healthcare": "psychotherapist",
+        "name": "Hospital de Custodia Tratamento Psiquiátrico Dr. Antônio Batalha Barcelos",
+        "short_name": "HCTP"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3474305835,
+      "lat": -20.4345049,
+      "lon": -41.4460112,
+      "tags": {
+        "addr:city": "Muniz Freire",
+        "addr:street": "Rua Moisés Côgo",
+        "addr:suburb": "São Pedro",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Posto de Saúde"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3491299251,
+      "lat": -18.1956886,
+      "lon": -40.2646062,
+      "tags": {
+        "IJSN:tipoUnidad": "Hospital Geral",
+        "addr:city": "Montanha",
+        "addr:place": "Comunidade Vinhático",
+        "addr:postcode": "29890-000",
+        "addr:street": "Rua Presidente Kennedy",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3754 5158",
+        "healthcare": "clinic",
+        "name": "Casa Nossa Senhora da Saúde"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3491299253,
+      "lat": -19.5358705,
+      "lon": -40.6314763,
+      "tags": {
+        "IJSN:tipoUnidad": "Hospital Geral",
+        "addr:city": "Colatina",
+        "addr:housenumber": "260",
+        "addr:place": "Centro",
+        "addr:postcode": "29700-060",
+        "addr:street": "Rua Cassiano Castelo",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3722 0900",
+        "healthcare": "clinic",
+        "name": "Casa de Saúde Santa Luzia"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3491299254,
+      "lat": -19.5365438,
+      "lon": -40.6325174,
+      "tags": {
+        "IJSN:tipoUnidad": "Hospital Geral",
+        "addr:city": "Colatina",
+        "addr:housenumber": "386",
+        "addr:place": "Centro",
+        "addr:postcode": "29700-060",
+        "addr:street": "Rua Cassiano Castelo",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3723 2000",
+        "healthcare": "clinic",
+        "name": "Casa de Saúde São Bernardo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3491299255,
+      "lat": -19.5388278,
+      "lon": -40.6347005,
+      "tags": {
+        "IJSN:tipoUnidad": "Hospital Geral",
+        "addr:city": "Colatina",
+        "addr:housenumber": "151",
+        "addr:place": "Esplanada",
+        "addr:postcode": "29702-040",
+        "addr:street": "Rua D. Pedro II",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3721 0511",
+        "healthcare": "clinic",
+        "name": "Centro Médico de Colatina"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3491299258,
+      "lat": -18.3757078,
+      "lon": -40.8288365,
+      "tags": {
+        "IJSN:tipoUnidad": "Hospital Geral",
+        "addr:housenumber": "279",
+        "addr:postcode": "29850-000",
+        "addr:street": "Rua Floriano Rubim",
+        "amenity": "hospital",
+        "contact:phone": "+55 27 3755 1025",
+        "healthcare": "hospital",
+        "name": "Clínica Santa Paula"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3491299260,
+      "lat": -21.0661312,
+      "lon": -41.3619612,
+      "tags": {
+        "IJSN:tipoUnidad": "Hospital Geral",
+        "addr:city": "Mimoso do Sul",
+        "addr:housenumber": "193",
+        "addr:place": "Monte Cristo",
+        "addr:postcode": "29400-000",
+        "addr:street": "Rua Ceciliano de Mello Porti",
+        "addr:suburb": "Centro",
+        "amenity": "hospital",
+        "contact:phone": "+55 28 3555 1566",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "healthcare:speciality": "general;gynaecology;paediatrics;internal",
+        "name": "Hospital Apóstolo Pedro"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3491299262,
+      "lat": -19.0204664,
+      "lon": -40.5333735,
+      "tags": {
+        "IJSN:tipoUnidad": "Hospital Geral",
+        "addr:city": "São Gabriel da Palha",
+        "addr:housenumber": "90",
+        "addr:place": "Glória",
+        "addr:postcode": "29780-000",
+        "addr:street": "Rua 14 de Maio",
+        "amenity": "hospital",
+        "contact:phone": "+55 27 3727 1387",
+        "healthcare": "hospital",
+        "name": "Hospital Doutor Fernando Serra"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3491299263,
+      "lat": -18.7552225,
+      "lon": -40.8936085,
+      "tags": {
+        "IJSN:tipoUnidad": "Hospital Geral",
+        "addr:city": "Barra de São Francisco",
+        "addr:country": "BR",
+        "addr:housenumber": "825",
+        "addr:place": "Centro",
+        "addr:postcode": "29800-000",
+        "addr:state": "ES",
+        "addr:street": "Avenida Prefeito Manoel Gonçalves",
+        "addr:suburb": "Centro",
+        "amenity": "hospital",
+        "contact:phone": "+55 27 3756 1211",
+        "healthcare": "hospital",
+        "healthcare:speciality": "general;gynaecology;paediatrics;orthopaedics",
+        "name": "Hospital Doutora Rita de Cássia - HDRC",
+        "operator": "Secretaria de Estado da Saúde",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3491299264,
+      "lat": -18.3688722,
+      "lon": -40.8305962,
+      "tags": {
+        "IJSN:tipoUnidad": "Hospital Geral",
+        "addr:city": "Ecoporanga",
+        "addr:housenumber": "195",
+        "addr:place": "Nossa Senhora de Aparecida",
+        "addr:postcode": "29850-000",
+        "addr:street": "Rua Idalino Monteiro",
+        "addr:suburb": "Nossa Senhora Aparecida",
+        "alt_name": "Fundação Médico Assistencial do Trabalhador Rural",
+        "amenity": "hospital",
+        "contact:phone": "+55 27 3755 1131",
+        "healthcare": "hospital",
+        "name": "Hospital FUMATRE",
+        "operator": "Fundação Médico Assistêncial do Trabalhadores Rurais de Ecoporanga - Fumatre",
+        "operator:type": "private",
+        "short_name": "FUMATRE"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3491299266,
+      "lat": -20.7915778,
+      "lon": -40.8131018,
+      "tags": {
+        "IJSN:tipoUnidad": "Hospital Geral",
+        "addr:city": "Iconha",
+        "addr:housenumber": "40",
+        "addr:place": "Centro",
+        "addr:postcode": "29280-000",
+        "addr:street": "Rua Alvim Serrão",
+        "amenity": "hospital",
+        "contact:phone": "+55 28 3537 1225",
+        "healthcare": "hospital",
+        "name": "Hospital Maternidade Danilo Monteiro de Castro"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3491299267,
+      "lat": -20.9520511,
+      "lon": -41.3428703,
+      "tags": {
+        "IJSN:tipoUnidad": "Hospital Geral",
+        "addr:city": "Muqui",
+        "addr:housenumber": "84",
+        "addr:place": "Boa Esperança",
+        "addr:postcode": "29480-000",
+        "addr:street": "Rua João Jacinto",
+        "addr:suburb": "Boa Esperança",
+        "amenity": "hospital",
+        "contact:phone": "+55 28 3554 1339",
+        "healthcare": "hospital",
+        "healthcare:speciality": "general",
+        "name": "Hospital Maternidade Doutor Aluísio Filgueiras"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3491299270,
+      "lat": -19.8049504,
+      "lon": -40.8544289,
+      "tags": {
+        "IJSN:tipoUnidad": "Hospital Geral",
+        "addr:city": "Itaguaçu",
+        "addr:housenumber": "1",
+        "addr:place": "Centro",
+        "addr:postcode": "29690-000",
+        "addr:street": "Alameda Matheus Antônio Prederigo",
+        "addr:suburb": "Centro",
+        "amenity": "hospital",
+        "contact:phone": "+55 27 3725 1261",
+        "healthcare": "hospital",
+        "healthcare:speciality": "general",
+        "name": "Hospital Nossa Senhora da Boa Família",
+        "operator": "Fundação José Theodoro de Andrade",
+        "operator:type": "private"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3491299272,
+      "lat": -20.0982248,
+      "lon": -40.5267414,
+      "tags": {
+        "IJSN:tipoUnidad": "Hospital Geral",
+        "addr:city": "Santa Leopoldina",
+        "addr:housenumber": "1000",
+        "addr:place": "Centro",
+        "addr:postcode": "29640-000",
+        "addr:street": "Ladeira Vereadora Rosalina Ribeiro Nunes",
+        "amenity": "hospital",
+        "contact:phone": "+55 27 3266 1131",
+        "healthcare": "hospital",
+        "name": "Hospital Nossa Senhora da Penha"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3491299273,
+      "lat": -19.0131413,
+      "lon": -40.5434247,
+      "tags": {
+        "IJSN:tipoUnidad": "Hospital Geral",
+        "addr:city": "São Gabriel da Palha",
+        "addr:housenumber": "25",
+        "addr:place": "Santa Rita",
+        "addr:postcode": "29780-000",
+        "addr:street": "Praça Maria da Penha do Nascimento",
+        "amenity": "hospital",
+        "contact:phone": "+55 27 3727 1200",
+        "healthcare": "hospital",
+        "name": "Hospital Santa Rita"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3491299278,
+      "lat": -19.2728742,
+      "lon": -40.3229178,
+      "tags": {
+        "IJSN:tipoUnidad": "Hospital Geral",
+        "addr:city": "Rio Bananal",
+        "addr:housenumber": "500",
+        "addr:place": "São Sebastião",
+        "addr:postcode": "29920-000",
+        "addr:street": "Rua João Cipriano",
+        "amenity": "hospital",
+        "contact:phone": "+55 27 3265 1101",
+        "healthcare": "hospital",
+        "name": "Hospital e Maternidade Alfredo Pinto Santana"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3491299280,
+      "lat": -20.8387143,
+      "lon": -40.721093,
+      "tags": {
+        "IJSN:tipoUnidad": "Hospital Geral",
+        "addr:city": "Piúma",
+        "addr:housenumber": "330",
+        "addr:place": "Centro",
+        "addr:postcode": "29285-000",
+        "addr:street": "Rua Santa Tereza",
+        "addr:suburb": "Tamarindo",
+        "amenity": "hospital",
+        "contact:phone": "+55 28 3520 1546",
+        "healthcare": "hospital",
+        "name": "Hospital e Maternidade Nossa Senhora da Conceição"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3491299281,
+      "lat": -19.755696,
+      "lon": -40.385475,
+      "tags": {
+        "IJSN:tipoUnidad": "Hospital Geral",
+        "amenity": "hospital",
+        "contact:phone": "+55 27 3258 1050",
+        "healthcare": "hospital",
+        "name": "Hospital e Maternidade Sagrado Coração de Maria"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3491299282,
+      "lat": -20.6360982,
+      "lon": -40.7493939,
+      "tags": {
+        "IJSN:tipoUnidad": "Hospital Geral",
+        "addr:city": "Alfredo Chaves",
+        "addr:housenumber": "387",
+        "addr:place": "Centro",
+        "addr:postcode": "29240-000",
+        "addr:street": "Rua Moacir Saudino",
+        "addr:suburb": "Centro",
+        "amenity": "hospital",
+        "contact:phone": "+55 27 3269 1392",
+        "healthcare": "hospital",
+        "name": "Hospital e Maternidade Sant'ana"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3491299284,
+      "lat": -20.0756072,
+      "lon": -41.1222271,
+      "tags": {
+        "IJSN:tipoUnidad": "Hospital Geral",
+        "addr:city": "Afonso Cláudio",
+        "addr:housenumber": "68",
+        "addr:place": "Centro",
+        "addr:postcode": "29600-000",
+        "addr:street": "Rua Benjamin Constant",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3735 1260",
+        "healthcare": "clinic",
+        "name": "Policlínica Nossa Senhora de Lourdes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3491299286,
+      "lat": -19.5229653,
+      "lon": -40.6343847,
+      "tags": {
+        "IJSN:tipoUnidad": "Hospital Geral",
+        "addr:city": "Colatina",
+        "addr:place": "Padre José de Anchieta",
+        "addr:postcode": "29703-910",
+        "addr:street": "Rua Reinaldo Ferrari Primo",
+        "amenity": "hospital",
+        "contact:phone": "+55 27 3177 7466",
+        "healthcare": "hospital",
+        "name": "Santa Casa de Misericórdia de Colatina"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3491299288,
+      "lat": -20.3427318,
+      "lon": -41.5395356,
+      "tags": {
+        "IJSN:tipoUnidad": "Hospital Geral",
+        "addr:city": "Iúna",
+        "addr:housenumber": "381",
+        "addr:place": "Niterói",
+        "addr:postcode": "29390-000",
+        "addr:street": "Avenida Presidente Tancredo Neves",
+        "addr:suburb": "Niterói",
+        "alt_name": "Santa Casa de Misericórdia",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "healthcare:speciality": "general",
+        "name": "Santa Casa de Iúna",
+        "operator": "Sociedade Civil Santa Casa de Iúna",
+        "operator:type": "private",
+        "phone": "+55 28 3545 1170"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3491299290,
+      "lat": -18.9076222,
+      "lon": -40.0711188,
+      "tags": {
+        "IJSN:tipoUnidad": "Unidade Mista",
+        "addr:city": "Jaguaré",
+        "addr:housenumber": "313",
+        "addr:place": "Centro",
+        "addr:postcode": "29950-000",
+        "addr:street": "Rua Paschoal Briochi",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade Mista de Internação",
+        "short_name": "UMI"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705947158,
+      "lat": -20.338993,
+      "lon": -40.307764,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "GRAMEG"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705954615,
+      "lat": -20.2709239,
+      "lon": -40.3782807,
+      "tags": {
+        "addr:city": "Cariacica",
+        "addr:place": "Pica-pau",
+        "addr:postcode": "29156-400",
+        "addr:street": "Estrada do Contorno",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3254 5470",
+        "healthcare": "clinic",
+        "name": "Hospital Doutor Pedro Fontes",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705966911,
+      "lat": -20.3240621,
+      "lon": -40.3770567,
+      "tags": {
+        "IJSN:tipoAgrup": "Policlínica",
+        "addr:city": "Cariacica",
+        "addr:place": "Itacibá",
+        "addr:postcode": "29146-470",
+        "addr:street": "Rua Guarapari",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3346 6576; +55 27 3346 6577",
+        "healthcare": "clinic",
+        "name": "Policlínica Cariacica",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705966914,
+      "lat": -20.3662083,
+      "lon": -40.4131789,
+      "tags": {
+        "IJSN:tipoAgrup": "Pronto Atendimento",
+        "addr:city": "Viana",
+        "addr:place": "Arlindo Vilaschi",
+        "addr:postcode": "29135-000",
+        "addr:street": "Rua Pernambuco",
+        "amenity": "clinic",
+        "emergency": "yes",
+        "healthcare": "clinic",
+        "name": "Pronto Atendimento do Bairro Arlindo Vilaschi",
+        "short_name": "PA",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705966915,
+      "lat": -20.4222976,
+      "lon": -40.4615106,
+      "tags": {
+        "IJSN:tipoAgrup": "Unidade Básica de Saúde",
+        "addr:city": "Viana",
+        "addr:housenumber": "220",
+        "addr:place": "Jucu",
+        "addr:postcode": "29135-000",
+        "addr:street": "Rua Nossa Senhora do Belém",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3255 1361",
+        "healthcare": "clinic",
+        "name": "Unidade Básica Saúde Jucu",
+        "short_name": "US",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705966918,
+      "lat": -20.3231805,
+      "lon": -40.361813,
+      "tags": {
+        "IJSN:tipoAgrup": "Unidade Básica de Saúde",
+        "addr:city": "Cariacica",
+        "addr:housenumber": "47",
+        "addr:place": "Alto Boa Vista",
+        "addr:postcode": "29152-060",
+        "addr:street": "Rua Pio XII",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3346 6566",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde Alto Boa Vista",
+        "short_name": "US",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705966919,
+      "lat": -20.3279954,
+      "lon": -40.3653414,
+      "tags": {
+        "IJSN:tipoAgrup": "Unidade Básica de Saúde",
+        "addr:city": "Cariacica",
+        "addr:housenumber": "104",
+        "addr:place": "Alto Lage",
+        "addr:postcode": "29151-050",
+        "addr:street": "Rua Edmilson Varejão",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3346 6557",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde Alto Lage",
+        "short_name": "US",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705966921,
+      "lat": -20.3530871,
+      "lon": -40.3667683,
+      "tags": {
+        "IJSN:tipoAgrup": "Unidade Básica de Saúde",
+        "addr:city": "Cariacica",
+        "addr:place": "Bela Aurora",
+        "addr:postcode": "29141-517",
+        "addr:street": "Rua Vitória",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3369 8597; +55 27 3346 6561",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde Bela Aurora",
+        "short_name": "US",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705966922,
+      "lat": -20.3454783,
+      "lon": -40.3908265,
+      "tags": {
+        "IJSN:tipoAgrup": "Unidade Básica de Saúde",
+        "addr:city": "Cariacica",
+        "addr:place": "Campo Grande",
+        "addr:postcode": "29146-050",
+        "addr:street": "Rua Padre José Carlos",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3346 6558",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde Bom Pastor",
+        "short_name": "US",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705966923,
+      "lat": -20.2930441,
+      "lon": -40.403787,
+      "tags": {
+        "IJSN:tipoAgrup": "Unidade Básica de Saúde",
+        "addr:city": "Cariacica",
+        "addr:place": "Campo Verde",
+        "addr:postcode": "29155-880",
+        "addr:street": "Rua Ernesto Silva",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3284 4933",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde Campo Verde",
+        "short_name": "US",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705966924,
+      "lat": -20.263963,
+      "lon": -40.4187412,
+      "tags": {
+        "IJSN:tipoAgrup": "Unidade Básica de Saúde",
+        "addr:city": "Cariacica",
+        "addr:place": "Cariacica Sede",
+        "addr:postcode": "29156-050",
+        "addr:street": "Rua Graciano Neves",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3284 4843; +55 27 3284 4997",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde Cariacica Sede",
+        "short_name": "US",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705967025,
+      "lat": -20.2733055,
+      "lon": -40.4150193,
+      "tags": {
+        "IJSN:tipoAgrup": "Unidade Básica de Saúde",
+        "access": "no",
+        "addr:city": "Cariacica",
+        "addr:place": "São João Batista",
+        "addr:postcode": "29156-315",
+        "addr:street": "Rodovia José Sette km 09",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3233-5467",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde IASES",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705967026,
+      "lat": -20.334082,
+      "lon": -40.366011,
+      "tags": {
+        "IJSN:tipoAgrup": "Unidade Básica de Saúde",
+        "addr:city": "Cariacica",
+        "addr:place": "Jardim América",
+        "addr:postcode": "29140-390",
+        "addr:street": "Rua Nicaragua",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3346 6562; +55 27 3346 6563",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde Jardim América",
+        "short_name": "US",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705967027,
+      "lat": -20.3887135,
+      "lon": -40.3694766,
+      "tags": {
+        "IJSN:tipoAgrup": "Unidade Básica de Saúde",
+        "addr:city": "Cariacica",
+        "addr:place": "Jardim Botânico",
+        "addr:postcode": "29140-840",
+        "addr:street": "Rua Baixo Guandu",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3369 8338",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde Jardim Botânico",
+        "short_name": "US",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705967028,
+      "lat": -20.3623893,
+      "lon": -40.3928952,
+      "tags": {
+        "IJSN:tipoAgrup": "Unidade Básica de Saúde",
+        "addr:city": "Cariacica",
+        "addr:housenumber": "33",
+        "addr:place": "Jardim Campo Grande",
+        "addr:postcode": "29144-825",
+        "addr:street": "Rua Bahia",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3336 0290",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde Jardim Campo Grande",
+        "short_name": "US",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705967029,
+      "lat": -20.3572971,
+      "lon": -40.4069969,
+      "tags": {
+        "IJSN:tipoAgrup": "Unidade Básica de Saúde",
+        "addr:city": "Viana",
+        "addr:housenumber": "137",
+        "addr:place": "Vila Bethânia",
+        "addr:postcode": "29135-000",
+        "addr:street": "Rua Santa Helena",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3336 1411",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde Mental",
+        "short_name": "US",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705967030,
+      "lat": -20.3340189,
+      "lon": -40.4046825,
+      "tags": {
+        "IJSN:tipoAgrup": "Unidade Básica de Saúde",
+        "addr:city": "Cariacica",
+        "addr:housenumber": "18",
+        "addr:place": "Vila Independência",
+        "addr:postcode": "29140-440",
+        "addr:street": "Rua dos Pinheiros",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3346 6544",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde Mucuri",
+        "short_name": "US",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705967031,
+      "lat": -20.3276991,
+      "lon": -40.3949822,
+      "tags": {
+        "IJSN:tipoAgrup": "Unidade Básica de Saúde",
+        "addr:city": "Cariacica",
+        "addr:housenumber": "28",
+        "addr:place": "Nova Brasília",
+        "addr:postcode": "29149-420",
+        "addr:street": "Rua Melchiedes Porfirio Almeida",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3346 6552",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde Nova Brasília",
+        "short_name": "US",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705967032,
+      "lat": -20.2878072,
+      "lon": -40.3760302,
+      "tags": {
+        "IJSN:tipoAgrup": "Unidade Básica de Saúde",
+        "addr:city": "Cariacica",
+        "addr:place": "Nova Canaã",
+        "addr:postcode": "29153-420",
+        "addr:street": "Avenida Canaã",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3346 6546",
+        "healthcare": "clinic",
+        "name": "Unidade Básica de Saúde de Nova Canaã",
+        "short_name": "US",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705967033,
+      "lat": -20.3736557,
+      "lon": -40.3913097,
+      "tags": {
+        "IJSN:tipoAgrup": "Unidade Básica de Saúde",
+        "addr:city": "Cariacica",
+        "addr:place": "Padre Gabriel",
+        "addr:postcode": "29141-887",
+        "addr:street": "Avenida Padre Gabriel Maire",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3346 6569",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde Padre Gabriel",
+        "short_name": "US",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705967034,
+      "lat": -20.3099856,
+      "lon": -40.3684279,
+      "tags": {
+        "IJSN:tipoAgrup": "Unidade Básica de Saúde",
+        "addr:city": "Cariacica",
+        "addr:place": "Porto de Santana",
+        "addr:postcode": "29153-010",
+        "addr:street": "Rua Gabinos Rios",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3346 6539",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde Porto de Santana",
+        "short_name": "US",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705967035,
+      "lat": -20.377712,
+      "lon": -40.3694766,
+      "tags": {
+        "IJSN:tipoAgrup": "Unidade Básica de Saúde",
+        "addr:city": "Cariacica",
+        "addr:place": "Castelo Branco",
+        "addr:postcode": "29140-740",
+        "addr:street": "Rua 1º de Maio",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3388 1378",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde Rio Marinho",
+        "short_name": "US",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705967037,
+      "lat": -20.277151,
+      "lon": -40.4082214,
+      "tags": {
+        "IJSN:tipoAgrup": "Unidade Básica de Saúde",
+        "addr:city": "Cariacica",
+        "addr:housenumber": "36",
+        "addr:place": "Santa Luzia",
+        "addr:postcode": "29156-553",
+        "addr:street": "Rua Itapina",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3254 5787",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde Santa Luzia",
+        "short_name": "US",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705967040,
+      "lat": -20.3048874,
+      "lon": -40.3852502,
+      "tags": {
+        "IJSN:tipoAgrup": "Unidade Básica de Saúde",
+        "addr:city": "Cariacica",
+        "addr:place": "Graúna",
+        "addr:postcode": "29154-620",
+        "addr:street": "Rua Laurinda Pereira do Nascimento",
+        "amenity": "clinic",
+        "check_date": "2024-04-23",
+        "contact:phone": "+55 27 3346 6547",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde Vila Graúna",
+        "short_name": "US",
+        "source": "IJSN",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705967041,
+      "lat": -20.3715203,
+      "lon": -40.431311,
+      "tags": {
+        "IJSN:tipoAgrup": "Unidade Básica de Saúde",
+        "addr:city": "Viana",
+        "addr:housenumber": "310",
+        "addr:place": "Areinha",
+        "addr:postcode": "29135-000",
+        "addr:street": "Avenida Guarapari",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 2127 6749",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde da Família Areinha",
+        "short_name": "USF",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705967043,
+      "lat": -20.3585929,
+      "lon": -40.4391039,
+      "tags": {
+        "IJSN:tipoAgrup": "Unidade Básica de Saúde",
+        "addr:city": "Viana",
+        "addr:place": "Canaã",
+        "addr:postcode": "29135-000",
+        "addr:street": "Rua Resplendor",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3344 8993",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde da Família Canãa",
+        "short_name": "USF",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705967044,
+      "lat": -20.3601595,
+      "lon": -40.455655,
+      "tags": {
+        "IJSN:tipoAgrup": "Unidade Básica de Saúde",
+        "addr:city": "Viana",
+        "addr:place": "Ipanema",
+        "addr:postcode": "29135-000",
+        "addr:street": "Rua Paschoal Marques",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 2124 6749",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde da Família Ipanema",
+        "short_name": "USF",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705967045,
+      "lat": -20.3694971,
+      "lon": -40.4146655,
+      "tags": {
+        "IJSN:tipoAgrup": "Unidade Básica de Saúde",
+        "addr:city": "Viana",
+        "addr:place": "Nova Bethânia",
+        "addr:postcode": "29135-000",
+        "addr:street": "Avenida Central",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3354 0167",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde da Família Nova Bethânia Eldorado",
+        "short_name": "USF",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705967046,
+      "lat": -20.3652133,
+      "lon": -40.4262595,
+      "tags": {
+        "IJSN:tipoAgrup": "Unidade Básica de Saúde",
+        "addr:city": "Viana",
+        "addr:place": "Caxias do Sul",
+        "addr:postcode": "29135-000",
+        "addr:street": "Rua Paulo",
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3344 2593",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde da Família Soteco",
+        "short_name": "USF",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3705967047,
+      "lat": -20.3594717,
+      "lon": -40.4476417,
+      "tags": {
+        "IJSN:tipoAgrup": "Unidade Básica de Saúde",
+        "addr:city": "Viana",
+        "addr:place": "Universal",
+        "addr:postcode": "29135-000",
+        "addr:street": "Rua I",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde da Família de Universal",
+        "short_name": "USF",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4032671829,
+      "lat": -20.4461812,
+      "lon": -40.3515853,
+      "tags": {
+        "amenity": "clinic",
+        "contact:phone": "+55 27 3299-5752",
+        "healthcare": "laboratory",
+        "name": "Tommasi Laboratório",
+        "opening_hours": "Mo-Fr 06:30-17:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4033323781,
+      "lat": -20.3355184,
+      "lon": -40.3045174,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Clínica Médica Glória"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4050908048,
+      "lat": -20.4454375,
+      "lon": -40.3509096,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "laboratory",
+        "name": "LaborTel Laboratórios"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4100651393,
+      "lat": -19.9338635,
+      "lon": -40.4051837,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "laboratory",
+        "name": "Thonson Laboratório"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4183782264,
+      "lat": -20.3607748,
+      "lon": -40.296081,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "laboratory",
+        "name": "Laboratório São Lucas"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4183782265,
+      "lat": -20.3608036,
+      "lon": -40.2960385,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "laboratory",
+        "name": "Cardio Diagnóstico"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4183782266,
+      "lat": -20.3608273,
+      "lon": -40.2959956,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Ismot"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4353359454,
+      "lat": -20.8402583,
+      "lon": -40.7268275,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "SUS"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4368612284,
+      "lat": -20.8626103,
+      "lon": -40.936817,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "UBS"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4427064227,
+      "lat": -20.353058,
+      "lon": -40.2964127,
+      "tags": {
+        "addr:city": "Vila Velha",
+        "addr:country": "BR",
+        "addr:housename": "Shopping Vila Velha",
+        "addr:place": "Shopping Vila Velha",
+        "addr:state": "ES",
+        "addr:suburb": "Divino Espirito Santo",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "level": "0",
+        "name": "CDI - Centro de Diagnóstico por Imagem"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4456452404,
+      "lat": -19.1621223,
+      "lon": -40.7724574,
+      "tags": {
+        "addr:street": "Rua Alagoas",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Posto de Saúde de Laginha"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4457713990,
+      "lat": -21.0089515,
+      "lon": -40.8213347,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Centro Médico"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4457715090,
+      "lat": -21.0115091,
+      "lon": -40.8113362,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Clindi Barra"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4463582490,
+      "lat": -20.3341462,
+      "lon": -40.2997596,
+      "tags": {
+        "addr:housenumber": "1925",
+        "addr:street": "Avenida Henrique Moscoso",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "São Francisco",
+        "name:pt": "São Francisco"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4515122591,
+      "lat": -21.0169051,
+      "lon": -40.8130558,
+      "tags": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Pronto Socorro da Barra"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4524179791,
+      "lat": -20.8053446,
+      "lon": -40.6551522,
+      "tags": {
+        "addr:postcode": "29230-000",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Medicenter",
+        "name:en": "Medicenter",
+        "name:pt": "Medicenter"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4524195090,
+      "lat": -20.7990934,
+      "lon": -40.6420241,
+      "tags": {
+        "addr:postcode": "29235-000",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Pronto socorro",
+        "name:en": "Pronto socorro",
+        "name:pt": "Pronto socorro",
+        "opening_hours": "24/7"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4552204792,
+      "lat": -20.4651146,
+      "lon": -41.4120566,
+      "tags": {
+        "addr:city": "Muniz Freire",
+        "addr:housenumber": "66",
+        "addr:postcode": "29380-000",
+        "addr:street": "Rua Cônego José Bazzarella",
+        "addr:suburb": "Centro",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "Santa Casa de Misericórdia Jesus Maria José",
+        "name:en": "Santa Casa de Misericórdia Jesus Maria José",
+        "name:pt": "Santa Casa de Misericórdia Jesus Maria José"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4577827689,
+      "lat": -20.0563954,
+      "lon": -40.201042,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "UBS de Nova Almeida",
+        "name:en": "Clinic",
+        "name:pt": "UBS de Nova Almeida"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4654047389,
+      "lat": -18.8584376,
+      "lon": -41.1188796,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade da Saúde Familiar",
+        "opening_hours": "08:00-17:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4675637031,
+      "lat": -20.3635708,
+      "lon": -41.2446923,
+      "tags": {
+        "addr:city": "Conceição do Castelo",
+        "addr:postcode": "29370-000",
+        "addr:suburb": "Nicolau de Vargas",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde Ádila de Almeida",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4675637032,
+      "lat": -20.3639249,
+      "lon": -41.3356405,
+      "tags": {
+        "addr:city": "Conceição do Castelo",
+        "addr:postcode": "29370-000",
+        "addr:street": "Monforte Frio",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade Sanitária de Monforte Frio",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4675637033,
+      "lat": -20.2850072,
+      "lon": -41.1807009,
+      "tags": {
+        "addr:city": "Conceição do Castelo",
+        "addr:postcode": "29370-000",
+        "addr:street": "Mata Fria",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade Sanitária de Mata Fria",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4675637034,
+      "lat": -20.4634456,
+      "lon": -41.2464778,
+      "tags": {
+        "addr:city": "Conceição do Castelo",
+        "addr:postcode": "29370-000",
+        "addr:street": "São José da Bela Vista",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade Sanitária Doutor Deco Bonicenha",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4675637035,
+      "lat": -20.4650983,
+      "lon": -41.277928,
+      "tags": {
+        "addr:city": "Conceição do Castelo",
+        "addr:postcode": "29370-000",
+        "addr:street": "Santo Antônio do Areião",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade Sanitária de Santo Antônio do Areião",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4675637036,
+      "lat": -20.3607022,
+      "lon": -41.2518912,
+      "tags": {
+        "addr:city": "Conceição do Castelo",
+        "addr:housenumber": "300",
+        "addr:postcode": "29370-000",
+        "addr:street": "Rua José Oliveira de Souza",
+        "addr:suburb": "Pedro Rigo",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade Sanitária Doutor Nilzio José da Silva",
+        "source": "IJSN"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4701409738,
+      "lat": -20.3292187,
+      "lon": -41.1321569,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "laboratory",
+        "name": "Clínica Imaginus - Serviços de Diagnóstico por Imagem"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4768226858,
+      "lat": -20.2965561,
+      "lon": -40.3069446,
+      "tags": {
+        "addr:housenumber": "147",
+        "addr:street": "Rua Marco Aurélio Fantin",
+        "addr:suburb": "Itararé",
+        "alt_name": "Postinho",
+        "amenity": "clinic",
+        "description": "Conhecido como “Postinho”, atua no apoio e atendimento na área médica e dentária, além de orientação psicológica e familiar de moradores das comunidades do Território do Bem.",
+        "healthcare": "clinic",
+        "image": "http://backend-mapabem.rhcloud.com/static/media/None/cd1212e113564f2c8d9b7a1c2ca642b1.png",
+        "name": "Ambulatório Santa Rita de Cássia",
+        "source": "IFES"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4844731246,
+      "lat": -20.8099687,
+      "lon": -40.635498,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "CAPS"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5035777823,
+      "lat": -20.3510758,
+      "lon": -40.2956126,
+      "tags": {
+        "addr:housenumber": "2410",
+        "addr:postcode": "29100-203",
+        "addr:street": "Avenida Luciano das Neves",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Centromed",
+        "opening_hours": "Su-Fr 08:00-18:00",
+        "phone": "+55 27 2121 7272"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5143295527,
+      "lat": -20.3352078,
+      "lon": -40.2841676,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "physiotherapist",
+        "name": "Equipe Fisioterapia Especializada",
+        "phone": "+55 27 33298329"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5157969921,
+      "lat": -20.3344427,
+      "lon": -40.288702,
+      "tags": {
+        "addr:street": "Rua Guilherme Farias",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Clínica XV de Novembro"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5170086622,
+      "lat": -20.1923963,
+      "lon": -40.2442076,
+      "tags": {
+        "addr:street": "Avenida Civit",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "internet_access": "wlan",
+        "name": "Cia da Saúde",
+        "opening_hours": "24/7"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5218160021,
+      "lat": -18.714458,
+      "lon": -39.8522045,
+      "tags": {
+        "addr:postcode": "29930-010",
+        "addr:street": "Rua Coronel Cunha Júnior",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Clínica Salles",
+        "opening_hours": "Mo-Fr 00:00-24:00",
+        "operator": "Nova Unidade Bio Scan",
+        "phone": "+55 27 3763 2999"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5297179022,
+      "lat": -20.8573952,
+      "lon": -41.1519827,
+      "tags": {
+        "addr:city": "Cachoeiro de Itapemirim",
+        "addr:street": "Rua Hermínio Altoé",
+        "addr:suburb": "Jardim Itapemirim",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade de Saúde do Jardim Itapemirim",
+        "operator": "Sistema Único de Saúde",
+        "operator:short": "SUS",
+        "operator:type": "public",
+        "operator:wikidata": "Q7531056",
+        "operator:wikipedia": "pt:Sistema Único de Saúde"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5627164240,
+      "lat": -20.2080227,
+      "lon": -40.2741826,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade Básica de Saúde de Jardim Tropical"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5686427317,
+      "lat": -20.3958741,
+      "lon": -40.7931921,
+      "tags": {
+        "amenity": "clinic",
+        "emergency": "no",
+        "healthcare": "clinic",
+        "name": "Comunidade Comportamental Terapeutica Casa da Mulher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5861513082,
+      "lat": -19.8037893,
+      "lon": -40.8562822,
+      "tags": {
+        "addr:street": "Av. 17 de Fevereiro",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Posto de Saúde Sede",
+        "operator": "Secretaria de Saúde"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5969279940,
+      "lat": -20.3552785,
+      "lon": -40.3916099,
+      "tags": {
+        "addr:city": "Cariacica",
+        "addr:street": "Rua Doutor Dório Silva",
+        "addr:suburb": "Santa Bárbara",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade Básica de Saúde de Santa Bárbara"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6083893925,
+      "lat": -20.8895089,
+      "lon": -40.7743098,
+      "tags": {
+        "addr:city": "Itapemirim",
+        "addr:postcode": "29330-000",
+        "addr:street": "Avenida Itapemirim",
+        "addr:suburb": "Itaipava",
+        "amenity": "clinic",
+        "healthcare": "centre",
+        "name": "Centro de Especialidades Médicas"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6123242516,
+      "lat": -20.7680822,
+      "lon": -41.6768825,
+      "tags": {
+        "addr:city": "Guaçuí",
+        "addr:housenumber": "162",
+        "addr:postcode": "29560-000",
+        "addr:street": "Rua Luis Pires de Andrade",
+        "addr:suburb": "Quincas Machado",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "radiology",
+        "name": "Clínica São Miguel Arcanjo",
+        "operator": "Clínica São Miguel Arcanjo Limitada",
+        "operator:type": "private"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6249610389,
+      "lat": -20.2799383,
+      "lon": -40.295487,
+      "tags": {
+        "addr:housenumber": "991",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Maria Dan"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6275427354,
+      "lat": -20.6724381,
+      "lon": -41.006523,
+      "tags": {
+        "addr:city": "Vargem Alta",
+        "addr:postcode": "29295-000",
+        "addr:street": "Rua Eupidio Quintino",
+        "addr:suburb": "Centro",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade Básica de Saúde de Vargem Alta",
+        "operator": "Prefeitura Municipal de Vargem Alta",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6410404253,
+      "lat": -20.1977209,
+      "lon": -40.1937248,
+      "tags": {
+        "addr:city": "Serra",
+        "addr:street": "Rua Paul Willy Weichert",
+        "addr:suburb": "Manguinhos",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "UAPS - Manguinhos",
+        "operator": "Prefeitura"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6422489844,
+      "lat": -20.1942531,
+      "lon": -40.2509287,
+      "tags": {
+        "addr:city": "Serra",
+        "addr:street": "Avenida Eldes Scherrer Souza",
+        "addr:suburb": "Civit II",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Samp"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6468705838,
+      "lat": -20.2094967,
+      "lon": -40.2635398,
+      "tags": {
+        "addr:city": "Serra",
+        "addr:street": "Avenida Desembargador Mário da Silva Nunes",
+        "addr:suburb": "Jardim Limoeiro",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unimed MedSênior"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6470495138,
+      "lat": -19.5393622,
+      "lon": -40.6337526,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6773474041,
+      "lat": -20.0748483,
+      "lon": -41.1248913,
+      "tags": {
+        "addr:city": "Afonso Cláudio",
+        "addr:postcode": "29600-000",
+        "addr:street": "Praça Aderbal Galvão",
+        "addr:suburb": "Centro",
+        "alt_name": "Unidade Sanitária de Afonso Cláudio",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade Sanitária Hilton Lopes Vieira",
+        "operator": "Município de Afonso Cláudio",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7052854776,
+      "lat": -21.0344425,
+      "lon": -41.0735087,
+      "tags": {
+        "addr:city": "Presidente Kennedy",
+        "addr:postcode": "29350-000",
+        "addr:street": "Rua",
+        "addr:suburb": "São Paulo",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Estratégia de Saúde da Família de São Paulo"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7052863073,
+      "lat": -21.1028561,
+      "lon": -40.9849659,
+      "tags": {
+        "addr:city": "Presidente Kennedy",
+        "addr:postcode": "29350",
+        "addr:street": "Rua",
+        "addr:suburb": "São Salvador",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Estratégia de Saúde da Família de São Salvador"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7058492717,
+      "lat": -21.1996166,
+      "lon": -40.9874279,
+      "tags": {
+        "addr:city": "Presidente Kennedy",
+        "addr:postcode": "29350000",
+        "addr:street": "Rua Principal",
+        "addr:suburb": "Jaqueira",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Estratégia de Saúde da Família"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7162341739,
+      "lat": -20.7879872,
+      "lon": -41.3908716,
+      "tags": {
+        "addr:city": "Jerônimo Monteiro",
+        "addr:housenumber": "33",
+        "addr:postcode": "29550-000",
+        "addr:province": "Espírito Santo",
+        "addr:street": "Rua Nestor Ramos",
+        "addr:suburb": "Centro",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Laboratório Liparizi",
+        "operator": "Liparizi Serviços Médicos e Laboratoriais Limitada",
+        "operator:type": "private",
+        "phone": "+55 28 99997 1111"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7188814274,
+      "lat": -20.2876188,
+      "lon": -40.7875274,
+      "tags": {
+        "addr:city": "Domingos Martins",
+        "addr:postcode": "29273000",
+        "addr:street": "Rua São Benedito",
+        "addr:suburb": "Comunidade Perobas",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Posto de Saúde Joaquim Tesch",
+        "opening_hours": "Mo-Fr 07:00-16:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7283032109,
+      "lat": -20.340043,
+      "lon": -40.3818003,
+      "tags": {
+        "addr:city": "Cariacica",
+        "addr:street": "Avenida Edgar Gonçalves",
+        "addr:suburb": "Campo Grande",
+        "amenity": "hospital",
+        "check_date": "2025-01-27",
+        "healthcare": "hospital",
+        "healthcare:speciality": "general",
+        "name": "Pronto Atendimento SAMP 24hs"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7383736093,
+      "lat": -20.4625454,
+      "lon": -41.4133578,
+      "tags": {
+        "addr:city": "Muniz Freire",
+        "addr:postcode": "29380-000",
+        "addr:street": "Rua Capitão João Alves",
+        "addr:suburb": "Centro",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "stomatology",
+        "name": "Clínica Dr. Zenilton Lopes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7423593363,
+      "lat": -20.259265,
+      "lon": -40.2649072,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "CEMEC"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7423821421,
+      "lat": -20.2554147,
+      "lon": -40.2694776,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde Raul Oliveira Neves",
+        "operator": "Município de Vitória",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7795013986,
+      "lat": -21.0633163,
+      "lon": -41.3640804,
+      "tags": {
+        "addr:city": "Mimoso do Sul",
+        "addr:housenumber": "79",
+        "addr:postcode": "29400-000",
+        "addr:street": "Rua Ivone Feitosa de Aguiar",
+        "addr:suburb": "Centro",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "dentist",
+        "mobile": "+55 28 99918 1585",
+        "name": "Centro de Odontologia e Medicina - Ceom",
+        "opening_hours": "Mo-Fr 08:00-19:00",
+        "operator": "Centro de Odontologia e Medicina Limitada",
+        "operator:type": "private"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7865066885,
+      "lat": -19.5302572,
+      "lon": -40.6563788,
+      "tags": {
+        "addr:street": "Rua Fioravante Rossi",
+        "amenity": "clinic",
+        "name": "Unesc Saúde"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8361777563,
+      "lat": -19.2727884,
+      "lon": -40.3442865,
+      "tags": {
+        "addr:city": "Rio Bananal",
+        "addr:postcode": "29920-000",
+        "addr:suburb": "Santo Antônio",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade Basica de Saúde Santo Antônio",
+        "opening_hours": "Mo-Su 07:00-16:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8838981377,
+      "lat": -19.8344494,
+      "lon": -40.2652063,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8878453092,
+      "lat": -20.4659007,
+      "lon": -41.5880609,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Posto de saúde"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8960700283,
+      "lat": -20.2189324,
+      "lon": -40.2295604,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9137581658,
+      "lat": -19.5434588,
+      "lon": -40.6682306,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Posto de Saude do Bairro Luiz Iglesias"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9411088999,
+      "lat": -21.0411831,
+      "lon": -40.8231193,
+      "tags": {
+        "amenity": "clinic",
+        "name": "Clinique"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9411091524,
+      "lat": -21.0421882,
+      "lon": -40.8248802,
+      "tags": {
+        "amenity": "clinic",
+        "fixme": "name",
+        "name": "W"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9411091543,
+      "lat": -21.0414034,
+      "lon": -40.8235887,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "centre",
+        "name": "Grupo Galante"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9446541369,
+      "lat": -21.0343741,
+      "lon": -40.8184422,
+      "tags": {
+        "amenity": "clinic",
+        "name": "Clinomed"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9466189247,
+      "lat": -20.7645324,
+      "lon": -41.2736671,
+      "tags": {
+        "addr:city": "Cachoeiro de Itapemirim",
+        "addr:postcode": "29323-000",
+        "addr:street": "Avenida Antero Soares",
+        "addr:suburb": "Pacotuba",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade Básica de Saúde de Pacotuba",
+        "operator": "Município de Cachoeiro de itapemirim",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9470122373,
+      "lat": -20.3721701,
+      "lon": -40.304881,
+      "tags": {
+        "addr:city": "Vila Velha",
+        "addr:housenumber": "2070",
+        "addr:postcode": "29102-020",
+        "addr:street": "Rodovia Comandante Octavio Schneider Queiroz",
+        "addr:suburb": "Praia de Itaparica",
+        "addr:unit": "204",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Detransito Clínica de Exames Médicos e Pisicológicos"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9505899439,
+      "lat": -19.9398576,
+      "lon": -40.6074458,
+      "tags": {
+        "addr:city": "Santa Teresa",
+        "addr:postcode": "29650-000",
+        "addr:street": "Avenida Barão Orlando Bonfim",
+        "addr:suburb": "Vila Nova",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade de Saúde de Vila Nova",
+        "operator": "Município de Santa Teresa",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9528094135,
+      "lat": -20.4097741,
+      "lon": -40.6732559,
+      "tags": {
+        "addr:city": "Marechal Floriano",
+        "addr:postcode": "29255-000",
+        "addr:street": "Rua Belarmino Pinto",
+        "addr:suburb": "Centro",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "healthcare:speciality": "general",
+        "name": "Policlínica Ary Ribeiro da Silva",
+        "operator": "Município de Marechal Floriano",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9533128963,
+      "lat": -20.4181584,
+      "lon": -41.0826012,
+      "tags": {
+        "addr:city": "Venda Nova do Imigrante",
+        "addr:postcode": "29375-000",
+        "addr:street": "Avenida Nelson Mieis",
+        "addr:suburb": "Alto Caxixe",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade de Saúde da Família de Alto Caxixe",
+        "operator": "Município de Venda Nova do Imigrante",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9534520113,
+      "lat": -20.2677017,
+      "lon": -41.0611343,
+      "tags": {
+        "addr:city": "Domingos Martins",
+        "addr:postcode": "29260-000",
+        "addr:suburb": "Lajinha",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade Básica de Saúde Adolpho Pizzol",
+        "operator": "Município de Domingos Martins",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9586092183,
+      "lat": -20.3824236,
+      "lon": -41.0251386,
+      "tags": {
+        "addr:city": "Domingos Martins",
+        "addr:postcode": "29260-000",
+        "addr:suburb": "Chácara Pietra Azzurra",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade Básica de Saúde de Pedra Azul",
+        "operator": "Município de Domingos Martins",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9597285115,
+      "lat": -20.5534407,
+      "lon": -40.8148366,
+      "tags": {
+        "addr:city": "Alfredo Chaves",
+        "addr:postcode": "29240-000",
+        "addr:street": "Avenida José Maria Camiletti",
+        "addr:suburb": "Matilde",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade Básica de Saúde José Bellon Filho",
+        "operator": "Município de Alfredo Chaves",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9597905220,
+      "lat": -20.4719895,
+      "lon": -40.9173685,
+      "tags": {
+        "addr:city": "Alfredo Chaves",
+        "addr:postcode": "29240-000",
+        "addr:suburb": "Urânia",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade Básica de Saúde Adamir Antônio Cibin"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9600723332,
+      "lat": -20.6407927,
+      "lon": -40.7479437,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Estratégia de Saúde da Família"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9612578501,
+      "lat": -20.7578718,
+      "lon": -41.4579644,
+      "tags": {
+        "addr:city": "Alegre",
+        "addr:postcode": "29520-000",
+        "addr:street": "Rua Euclides Jaccoud",
+        "addr:suburb": "Rive",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade Básica de Saúde de Rive",
+        "operator": "Município de Alegre",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9629084747,
+      "lat": -20.7930827,
+      "lon": -41.3975128,
+      "tags": {
+        "addr:city": "Jerônimo Monteiro",
+        "addr:postcode": "29550-000",
+        "addr:street": "Rua Zequinha Sapateiro",
+        "addr:suburb": "Santo Antônio",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade de Saúde da Família Módulo Um e Quatro",
+        "operator": "Município de Jerônimo Monteiro",
+        "operator:type": "government",
+        "ref": "Cnes-2447398;Cnes-2627884"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9629084766,
+      "lat": -20.7877381,
+      "lon": -41.3916041,
+      "tags": {
+        "addr:city": "Jerônimo Monteiro",
+        "addr:housenumber": "34",
+        "addr:postcode": "29550-000",
+        "addr:street": "Praça Prefeito Antônio Alves Duarte",
+        "addr:suburb": "Centro",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "healthcare:speciality": "general;orthopaedics;gynaecology;radiology",
+        "name": "Hospital Unidade Integrada Jerônimo Monteiro",
+        "operator": "Governo do Estado do Espírito Santo",
+        "operator:type": "government",
+        "phone": "+55 28 3558 2600;+55 28 3558 1133",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9629084767,
+      "lat": -20.7878832,
+      "lon": -41.3918267,
+      "tags": {
+        "addr:city": "Jerônimo Monteiro",
+        "addr:housenumber": "12",
+        "addr:postcode": "29550-000",
+        "addr:street": "Praça Prefeito Antônio Alves Duarte",
+        "addr:suburb": "Centro",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "emergency",
+        "name": "Pronto Socorro do Hospital Unidade Integrada Jerônimo Monteiro",
+        "opening_hours": "24/7",
+        "operator": "Governo do Estado do Espírito Santo",
+        "operator:type": "government",
+        "phone": "+552835581133",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9629084772,
+      "lat": -20.7905119,
+      "lon": -41.3955992,
+      "tags": {
+        "addr:city": "Jerônimo Monteiro",
+        "addr:housenumber": "244",
+        "addr:postcode": "29550-000",
+        "addr:street": "Rua Nossa Senhora Aparecida",
+        "addr:suburb": "Centro",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade Básica e de Vigilância em Saúde de Jerônimo Monteiro",
+        "operator": "Município de Jerônim Monteiro",
+        "operator:type": "public",
+        "ref": "Cnes-9474153"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9656278400,
+      "lat": -19.4032984,
+      "lon": -40.0695223,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Clínica Centrolin"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9656557509,
+      "lat": -19.3212268,
+      "lon": -40.071562,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade de Saúde Dr. José Antônio Palmeira"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9680141974,
+      "lat": -19.3911095,
+      "lon": -40.0632673,
+      "tags": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "UPA Shell - Unidade de Saúde e Pronto Atendimento 24h"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9853688419,
+      "lat": -19.2192264,
+      "lon": -40.5906576,
+      "tags": {
+        "addr:city": "Governador Lindenberg",
+        "addr:district": "Novo Brasil",
+        "addr:postcode": "29720-000",
+        "addr:street": "Travessa São José",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Centro de Saúde Arlindo Stocco",
+        "opening_hours": "24/7"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9968085725,
+      "lat": -20.769072,
+      "lon": -41.5348532,
+      "tags": {
+        "addr:city": "Alegre",
+        "addr:postcode": "29500-000",
+        "addr:street": "Rua Luiz Albani",
+        "addr:suburb": "Vila do Sul",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Estratégia da Saúde da Família do Bairro Vila do Sul",
+        "operator": "Município de Alegre",
+        "operator:type": "public",
+        "phone": "+55 28 3552 1086"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9970475720,
+      "lat": -20.7908068,
+      "lon": -41.3795412,
+      "tags": {
+        "addr:city": "Jerônimo Monteiro",
+        "addr:housenumber": "171",
+        "addr:postcode": "29550-000",
+        "addr:street": "Avenida Sebastião Carangola",
+        "addr:suburb": "Vila Brito",
+        "alt_name": "Unidade Básica de Saúde da Família Santa Clara",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade de Saúde da Família Módulo Dois e Três - Deputado Luiz Gonzaga Borges",
+        "operator": "Município de Jerônimo Monteiro",
+        "operator:type": "public",
+        "ref": "Cnes-2447487;Cnes-2447444"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9976992771,
+      "lat": -20.7224067,
+      "lon": -41.6816293,
+      "tags": {
+        "addr:city": "Guaçuí",
+        "addr:postcode": "29560-000",
+        "addr:street": "Avenida Cândido Avelino Mendonça",
+        "addr:suburb": "São Tiago",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Estratégia Saúde Da Família Antonio Dutra de Mendonça",
+        "operator": "Município de Guaçuí",
+        "operator:type": "public",
+        "phone": "+55 28 3553 1336"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9976992799,
+      "lat": -20.7585894,
+      "lon": -41.6686722,
+      "tags": {
+        "addr:city": "Guaçuí",
+        "addr:postcode": "29560-000",
+        "addr:street": "Avenida José Moraes Moulin",
+        "addr:suburb": "Tancredo Neves",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Estratégia de Saúde da Família Doutor Abelha",
+        "operator": "Município de Guaçuí",
+        "operator:type": "public",
+        "phone": "+55 28 3553 3588"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9978691439,
+      "lat": -20.7677986,
+      "lon": -41.6773123,
+      "tags": {
+        "IJSN:tipoUnidad": "Hospital Geral",
+        "addr:city": "Guaçuí",
+        "addr:housenumber": "07",
+        "addr:place": "Quincas Machado",
+        "addr:postcode": "29560-000",
+        "addr:street": "Rua Doutor Nilton Gomes Figueiredo",
+        "addr:suburb": "Quincas Machado",
+        "amenity": "hospital",
+        "contact:phone": "+55 28 3553 1781",
+        "email": "santacasaguacui@yahoo.com.br",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "healthcare:speciality": "general;emergency;gynaecology;paediatrics",
+        "name": "Santa Casa de Misericórdia de Guaçuí"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9978691453,
+      "lat": -20.7728848,
+      "lon": -41.6747521,
+      "tags": {
+        "addr:city": "Guaçuí",
+        "addr:postcode": "29560-000",
+        "addr:street": "Avenida Espírito Santo",
+        "addr:suburb": "Centro",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade Básica de Saúde Doutor Aloísio Moreira Andrade",
+        "operator": "Município de Guaçuí",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9992547054,
+      "lat": -20.7812381,
+      "lon": -41.6624564,
+      "tags": {
+        "addr:city": "Guaçuí",
+        "addr:postcode": "29560-000",
+        "addr:street": "Avenida José Ferreira Alves",
+        "addr:suburb": "Balança",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade Básica de Saúde Antônio de Oliveira (Catatau)",
+        "operator": "Município de Guaçuí",
+        "operator:type": "public",
+        "phone": "+55 28 3553 1336",
+        "ref": "Cnes - 2447835"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9993477539,
+      "lat": -20.777018,
+      "lon": -41.6870672,
+      "tags": {
+        "addr:city": "Guaçuí",
+        "addr:postcode": "29560-000",
+        "addr:street": "Rua Mariana Viana Emery",
+        "addr:suburb": "Vale do Sol",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Estratégia de Saúde da Família José Theodoro",
+        "operator": "Município de Guaçuí",
+        "operator:type": "public",
+        "phone": "+55 28 3553 3861",
+        "ref": "5431387 - Cnes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9993477544,
+      "lat": -20.779983,
+      "lon": -41.80203,
+      "tags": {
+        "addr:city": "Guaçuí",
+        "addr:postcode": "29564-000",
+        "addr:street": "Rua Agostinho Zanini",
+        "addr:suburb": "São Pedro de Rates",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Estratégia de Saúde da Família João Polido de Souza",
+        "operator": "Município de Guaçuí",
+        "operator:type": "public",
+        "ref": "Cnes - 2446979"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10003271367,
+      "lat": -21.1258829,
+      "lon": -41.6712156,
+      "tags": {
+        "addr:city": "Bom Jesus do Norte",
+        "addr:postcode": "29460-000",
+        "addr:street": "Avenida Cristiano Dias Lopes",
+        "addr:suburb": "São Sebastião",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade de Saúde da Familia Doutor Watson Pimentel Lacerda",
+        "operator": "Município de Bom Jesus do Norte",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10022382503,
+      "lat": -20.9444605,
+      "lon": -41.6878552,
+      "tags": {
+        "addr:city": "Airituba",
+        "addr:postcode": "29470-000",
+        "addr:street": "Rua Virgilio Moreira da Cunha",
+        "addr:suburb": "Airituba",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade Básica de Saúde Airituba",
+        "operator": "Município de São José do Calçado",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10025008948,
+      "lat": -21.0282711,
+      "lon": -41.6518183,
+      "tags": {
+        "addr:city": "São José do Calçado",
+        "addr:postcode": "29470-000",
+        "addr:street": "Rua Romão Batista",
+        "addr:suburb": "Centro",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade Básica de Saúde de São José do Calçado",
+        "operator": "Município de São José do Calçado",
+        "operator:type": "public",
+        "phone": "+55 28 3556 1394"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10028142230,
+      "lat": -21.065091,
+      "lon": -41.3628388,
+      "tags": {
+        "addr:city": "Mimoso do Sul",
+        "addr:postcode": "29400-000",
+        "addr:street": "Rua Ceciliano de Mello Porti",
+        "addr:suburb": "Centro",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade Sanitária Doutor Lincoln Galveas Martins",
+        "operator": "Município de Mimoso do Sul",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10171556288,
+      "lat": -20.3554691,
+      "lon": -41.5320457,
+      "tags": {
+        "addr:city": "Iúna",
+        "addr:postcode": "29390-000",
+        "addr:street": "Rua Euclides Gomes de Matos",
+        "addr:suburb": "Guanabara",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Estratégia de Saúde da Família Guanabara",
+        "operator": "Município de Iúna",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10172144223,
+      "lat": -20.3406494,
+      "lon": -41.5283771,
+      "tags": {
+        "addr:city": "Iúna",
+        "addr:postcode": "29390-000",
+        "addr:street": "Rua Olimpio José de Lima",
+        "addr:suburb": "Pito",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Estratégia de Saúde da Família Bairro Pito",
+        "operator": "Município de Iúna",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10172242129,
+      "lat": -20.351195,
+      "lon": -41.5344722,
+      "tags": {
+        "addr:city": "Iúna",
+        "addr:housenumber": "69",
+        "addr:postcode": "29390-000",
+        "addr:street": "Avenida Prefeito Antônio Lacerda",
+        "addr:suburb": "Centro",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Centro Municipal de Saúde",
+        "operator": "Município de Iúna",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10184581954,
+      "lat": -19.693416,
+      "lon": -40.8350146,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Posto de Saúde de Palmeira"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10271225571,
+      "lat": -18.721941,
+      "lon": -39.8700241,
+      "tags": {
+        "addr:city": "São Mateus",
+        "addr:postcode": "29941-380",
+        "addr:street": "Avenida Vitória",
+        "addr:suburb": "Vila Nova",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade Básica de Saúde do Bairro Vila Nova Dois",
+        "operator": "Município de São Mateus",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10276351508,
+      "lat": -18.7281202,
+      "lon": -40.2214239,
+      "tags": {
+        "addr:city": "São Mateus",
+        "addr:postcode": "29949-065",
+        "addr:street": "Rua Cachoeira do Cravo",
+        "addr:suburb": "Nestor Gomes",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade de Saúde da Família de Nestor Gomes Um e Dois",
+        "operator": "Secretaria Municipal de Saúde - Semsa",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10278600796,
+      "lat": -18.5536862,
+      "lon": -40.2234068,
+      "tags": {
+        "addr:city": "Boa Esperança",
+        "addr:postcode": "29845-000",
+        "addr:street": "Avenida João Kletli",
+        "addr:suburb": "Bela Vista",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade Básica de Saúde João Marchiori",
+        "operator": "Município de Boa Esperaça",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10279935734,
+      "lat": -18.6887379,
+      "lon": -40.3912325,
+      "tags": {
+        "addr:city": "Nova Venécia",
+        "addr:postcode": "29830-000",
+        "addr:street": "Rua Ernesto Geisel",
+        "addr:suburb": "Altoé",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Estratégia de Saúde da Família do Bairro Altoé",
+        "operator": "Secretaria Municipal de Saúde de Nova Venécia Semsa",
+        "operator:type": "public",
+        "phone": "+55 27 3752 9053"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10287950544,
+      "lat": -19.0881158,
+      "lon": -40.1394679,
+      "tags": {
+        "addr:city": "Sooretama",
+        "addr:postcode": "29927-000",
+        "addr:street": "Rua Sete",
+        "addr:suburb": "Juncado",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Estratégia de Saúde da Família de Juncado",
+        "operator": "Muncípio de Juncado",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10288033680,
+      "lat": -19.1169076,
+      "lon": -40.1908415,
+      "tags": {
+        "addr:city": "Sooretama",
+        "addr:postcode": "29927-000",
+        "addr:street": "Rua Principal",
+        "addr:suburb": "Chumbado",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Estratégia de Saúde da Família de Chumbado",
+        "operator": "Município de Sooretama",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10304350255,
+      "lat": -18.993129,
+      "lon": -40.2731672,
+      "tags": {
+        "addr:city": "Vila Valério",
+        "addr:district": "Jurama",
+        "addr:postcode": "297885-000",
+        "addr:state": "Espírito Santo",
+        "addr:street": "Rua Principal",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade de Saúde Lúcia Moro Franco",
+        "operator": "Município de Vila Valério",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10310808748,
+      "lat": -19.264033,
+      "lon": -40.0380599,
+      "tags": {
+        "addr:city": "Linhares",
+        "addr:postcode": "29911-020",
+        "addr:street": "Avenida João Soprani",
+        "addr:suburb": "Farias",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade de Saúde Rodolfo Bitti",
+        "operator": "Município de Linhares",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10554569633,
+      "lat": -18.2959491,
+      "lon": -39.9596307,
+      "tags": {
+        "addr:city": "Pedro Canário",
+        "addr:postcode": "29970-000",
+        "addr:street": "Avenida Alberto dos Reis Castro",
+        "addr:suburb": "Novo Horizonte",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade de Saúde Central",
+        "operator": "Município de Pedro Canário",
+        "operator:type": "public",
+        "phone": "+55 27 3764 0815"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10724445446,
+      "lat": -20.3357693,
+      "lon": -40.2857642,
+      "tags": {
+        "amenity": "clinic",
+        "name": "Clinica Praia da Costa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10724445447,
+      "lat": -20.3357642,
+      "lon": -40.2858178,
+      "tags": {
+        "amenity": "clinic",
+        "name": "Cvp Vacinas"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10868933630,
+      "lat": -20.0845774,
+      "lon": -41.1253468,
+      "tags": {
+        "addr:city": "Afonso Cláudio",
+        "addr:postcode": "29600-000",
+        "addr:street": "Rua João Batista de Araujo",
+        "addr:suburb": "Amâncio Pimenta",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade de Saúde da Família Francisco Xavier de Azeredo Filho",
+        "operator": "Município de Afonso Cláudio",
+        "operator:type": "public",
+        "phone": "+55 27 3735 4074"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10870581253,
+      "lat": -20.0782496,
+      "lon": -41.1215903,
+      "tags": {
+        "addr:city": "Afonso Cláudio",
+        "addr:postcode": "29600-000",
+        "addr:street": "Rua João Vieira de Souza",
+        "addr:suburb": "Chácara Providência",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "physiotherapy",
+        "name": "Centro de Reabilitação Física",
+        "operator": "Município de Afonso Cláudio",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10881110040,
+      "lat": -19.9029036,
+      "lon": -41.0583507,
+      "tags": {
+        "addr:city": "Laranja da Terra",
+        "addr:postcode": "29615-000",
+        "addr:street": "Avenida Germano Stabenow",
+        "addr:suburb": "Niterói",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade Básica de Saúde da Sede",
+        "operator": "Município de Laranja da Terra",
+        "phone": "+55 27 3736 1323"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10881840643,
+      "lat": -20.1664325,
+      "lon": -41.0982708,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade de Saúde de São Luiz de Boa Sorte",
+        "operator": "Município de Afonso Claúdio",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10902727446,
+      "lat": -20.6256244,
+      "lon": -41.1986324,
+      "tags": {
+        "addr:city": "Castelo",
+        "addr:postcode": "29360-000",
+        "addr:street": "Avenida João Venturim Filho",
+        "addr:suburb": "Cava Roxa",
+        "alt_name": "Caps de Castelo",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "psychiatry;child_psychiatry;psychology;psychotherapist",
+        "name": "Centro de Atendimento Psicossocial de Castelo",
+        "operator": "Município de Castelo",
+        "operator:type": "public",
+        "phone": "+55 28 3542 4291"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10909834979,
+      "lat": -20.6018903,
+      "lon": -41.2136578,
+      "tags": {
+        "addr:city": "Castelo",
+        "addr:postcode": "29360-000",
+        "addr:street": "Avenida Oscar Rangel",
+        "addr:suburb": "Volta Redonda",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade de Saúde da Família Nivaldo Tessinari",
+        "operator": "Município de Castelo",
+        "operator:type": "public",
+        "phone": "+55 28 3542 8558"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10940668333,
+      "lat": -20.6552991,
+      "lon": -41.020984,
+      "tags": {
+        "addr:city": "Vargem Alta",
+        "addr:postcode": "29295-000",
+        "addr:street": "Rua Santa Rita de Cássia",
+        "addr:suburb": "Vila Esperança",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade de Apoio de Vila Esperança",
+        "operator": "Município de Vargem Alta",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10946835832,
+      "lat": -20.5182049,
+      "lon": -40.9860167,
+      "tags": {
+        "addr:city": "Vargem Alta",
+        "addr:postcode": "29295-000",
+        "addr:street": "Rua do Campo",
+        "addr:suburb": "Castelinho",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade Básica de Saúde de Castelinho",
+        "operator": "Município de Vargem Alta",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10960101840,
+      "lat": -20.6627775,
+      "lon": -41.0565057,
+      "tags": {
+        "addr:city": "Vargem Alta",
+        "addr:district": "Prosperidade",
+        "addr:postcode": "29297-000",
+        "addr:street": "Avenida Beira Rio",
+        "addr:suburb": "Centro",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade Básica de Saúde de Prosperidade",
+        "operator": "Município de Vargem Alta",
+        "operator:type": "public",
+        "phone": "+55 28 3528 1010"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10962644972,
+      "lat": -20.7273325,
+      "lon": -41.1327327,
+      "tags": {
+        "addr:city": "Cachoeiro de Itapemirim",
+        "addr:postcode": "29325-000",
+        "addr:street": "Rua Deoclécio Cossi",
+        "addr:suburb": "Centro",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "healthcare:speciality": "general",
+        "name": "Pronto Atendimento de Itaoca",
+        "operator": "Município de Cachoeiro de Itapemirim",
+        "operator:type": "public",
+        "phone": "+55 28 3539 1289"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10970828052,
+      "lat": -20.7274138,
+      "lon": -41.1323685,
+      "tags": {
+        "addr:city": "Cachoeiro de Itapemirim",
+        "addr:postcode": "29325-000",
+        "addr:street": "Rua Pedro Vivacqua",
+        "addr:suburb": "Centro",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade Básica de Saúde da Família Edna Paschoal do Nascimento",
+        "operator": "Município de Cachoeiro de Itapemirim",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10972234271,
+      "lat": -20.6920402,
+      "lon": -41.0685908,
+      "tags": {
+        "addr:city": "Vargem Alta",
+        "addr:suburb": "Pedra Branca",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Unidade Básica de Saúde de Pedra Branca"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11368583239,
+      "lat": -20.3379926,
+      "lon": -41.3917498,
+      "tags": {
+        "addr:city": "Muniz Freire",
+        "addr:street": "Avenida Argemiro José da Silva",
+        "addr:suburb": "Piaçu",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "community;vaccination;dentist",
+        "name": "UBS Piaçú",
+        "operator": "Prefeitura Municipal de Muniz Freire",
+        "operator:type": "government",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11368607074,
+      "lat": -20.4627682,
+      "lon": -41.4111461,
+      "tags": {
+        "addr:city": "Muniz Freire",
+        "addr:postcode": "29380-000",
+        "addr:street": "Rua das Acácias",
+        "addr:suburb": "Santa Cecília",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "vaccination;community",
+        "name": "ESF Muniz Freire",
+        "operator": "Prefeitura Municipal de Muniz Freire",
+        "operator:type": "government"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11630218288,
+      "lat": -20.7876091,
+      "lon": -41.392917,
+      "tags": {
+        "addr:city": "Jerônimo Monteiro",
+        "addr:housenumber": "54",
+        "addr:postcode": "29550-000",
+        "addr:province": "Espírito Santo",
+        "addr:street": "Rua Enivaldo Sessa",
+        "addr:suburb": "Centro",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;physiotheapy;psychiatry",
+        "name": "Medicina & Saúde",
+        "operator": "Clínica Médica Medicina e Saúde Limitada",
+        "operator:type": "private"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11717093468,
+      "lat": -20.2312397,
+      "lon": -40.2327632,
+      "tags": {
+        "access": "private",
+        "amenity": "clinic",
+        "emergency": "yes",
+        "healthcare": "clinic",
+        "name": "Posto Medico de SunCoke"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11833999582,
+      "lat": -20.3330027,
+      "lon": -40.2984591,
+      "tags": {
+        "amenity": "clinic",
+        "name": "Clínica São Clemente"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12199002160,
+      "lat": -20.312681,
+      "lon": -40.3892169,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Unidade básica de saúde de santana",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12244203426,
+      "lat": -20.6448967,
+      "lon": -40.4764769,
+      "tags": {
+        "addr:city": "Guarapari",
+        "addr:postcode": "29216-805",
+        "addr:street": "R. Pastor Simão Pedro Manske",
+        "addr:suburb": "Village da Praia",
+        "amenity": "hospital",
+        "check_date": "2026-02-01",
+        "healthcare": "hospital",
+        "healthcare:speciality": "general;gynaecology",
+        "name": "Hospital Geral Dr. Luiz Buaiz",
+        "opening_hours": "24/7",
+        "operator": "Hospital Materno Infantil Francisco de Assis (Hifa)",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12466119248,
+      "lat": -20.3511301,
+      "lon": -40.2890272,
+      "tags": {
+        "addr:housenumber": "1420",
+        "addr:street": "Rua Curitiba",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "dermatology",
+        "name": "Victor Katrink Clínica"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12480762569,
+      "lat": -20.8451592,
+      "lon": -41.1233432,
+      "tags": {
+        "amenity": "hospital",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "name": "Posto Municipal de Saúde"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12608492458,
+      "lat": -20.3404348,
+      "lon": -40.3892448,
+      "tags": {
+        "addr:city": "Cariacica",
+        "addr:housenumber": "12",
+        "addr:postcode": "29146-180",
+        "addr:street": "Travessa Eugênio Rodrigues",
+        "addr:suburb": "Campo Grande",
+        "air_conditioning": "yes",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "humanistic",
+        "mobile": "+55 27 99922 0995",
+        "name": "Psicóloga Jessica Elaine Tamanhon",
+        "opening_hours": "Mo-Fr 08:00-20:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12847783494,
+      "lat": -20.8506654,
+      "lon": -41.1058138,
+      "tags": {
+        "amenity": "clinic",
+        "healthcare": "clinic"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13475289356,
+      "lat": -19.8588985,
+      "lon": -40.0756416,
+      "tags": {
+        "amenity": "clinic",
+        "name": "Ambulatório",
+        "note": "emergency",
+        "ref": "S17",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13603109643,
+      "lat": -19.9040341,
+      "lon": -40.8961734,
+      "tags": {
+        "addr:place": "Baixo Sossego",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "ESF BAIXO SOSSEGO"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13821207698,
+      "lat": -20.8579282,
+      "lon": -41.1022042,
+      "tags": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "PPG"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13821207699,
+      "lat": -20.8409678,
+      "lon": -41.1635388,
+      "tags": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "UPA Marbrasa"
+      }
+    },
+    {
+      "type": "node",
+      "id": 14220426801,
+      "lat": -20.1972746,
+      "lon": -40.2527197,
+      "tags": {
+        "addr:housenumber": "300",
+        "addr:postcode": "29165390",
+        "addr:street": "Avenida Segunda",
+        "amenity": "clinic",
+        "email": "serra.es@amorsaude.com",
+        "internet_access": "wlan",
+        "name": "Amor Saúde Serra",
+        "website": "http://amorsaude.com.br"
+      }
+    }
+  ]
+}

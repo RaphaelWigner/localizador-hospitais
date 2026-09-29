@@ -70,7 +70,7 @@
         #map-container { flex: 1; position: relative; }
         #map { height: 100%; width: 100%; z-index: 1; }
 
-        #btn-buscar {
+       #btn-buscar {
             position: absolute;
             bottom: 30px;
             left: 50%;
@@ -81,6 +81,7 @@
             border: 2px solid #cc0000;
             width: 60px; 
             height: 60px;
+            border-radius: 50%;
             font-size: 24px;
             display: flex;
             align-items: center;
@@ -111,7 +112,7 @@
 
         <div id="map-container">
             <div id="map"></div>
-            <button id="btn-buscar" title="Buscar Hospitais">🔍</button>
+            <button id="btn-buscar" title="Buscar Hospitais"></button>
         </div>
     </div>
 
@@ -133,41 +134,7 @@
         let hospitaisEncontrados = [];
 
         // ==========================================
-        // 2. SISTEMA ANTI-FALHAS (TIMEOUT FORÇADO)
-        // ==========================================
-        async function fetchComTentativas(query, elementoStatus = null) {
-            // Os 3 melhores servidores (Espelhos)
-            const servidores = [
-                'https://overpass-api.de/api/interpreter',
-                'https://z.overpass-api.de/api/interpreter',
-                'https://lz4.overpass-api.de/api/interpreter'
-            ];
-
-            for (let i = 0; i < servidores.length; i++) {
-                const url = `${servidores[i]}?data=${encodeURIComponent(query)}`;
-                try {
-                    // AbortController corta a ligação se o servidor demorar mais de 6 segundos
-                    const controller = new AbortController();
-                    const timeoutId = setTimeout(() => controller.abort(), 6000);
-                    
-                    const resposta = await fetch(url, { signal: controller.signal });
-                    clearTimeout(timeoutId); // Limpa o limite de tempo se respondeu depressa
-                    
-                    if (!resposta.ok) throw new Error("Servidor rejeitou ou demorou");
-                    return await resposta.json();
-                } catch (erro) {
-                    if (i === servidores.length - 1) throw erro; 
-                    
-                    if (elementoStatus) {
-                        elementoStatus.innerText = `Servidor ${i+1} lento. A tentar o próximo...`;
-                        elementoStatus.style.color = '#ff9900'; 
-                    }
-                }
-            }
-        }
-
-        // ==========================================
-        // 3. MIN-HEAP (ÁRVORE BINÁRIA)
+        // 2. MIN-HEAP (ÁRVORE BINÁRIA)
         // ==========================================
         class MinHeap {
             constructor() { this.heap = []; }
@@ -208,7 +175,7 @@
         }
 
         // ==========================================
-        // 4. MOTOR DO GRAFO E DIJKSTRA
+        // 3. MOTOR DO GRAFO E DIJKSTRA
         // ==========================================
         function calcularDistancia(lat1, lon1, lat2, lon2) {
             const R = 6371e3; 
@@ -299,47 +266,48 @@
         }
 
         // ==========================================
-        // 5. CLIQUE: BUSCAR HOSPITAIS
+        // 4. CLIQUE: BUSCAR HOSPITAIS (BANCO LOCAL)
         // ==========================================
         document.getElementById('btn-buscar').addEventListener('click', async () => {
             const btn = document.getElementById('btn-buscar');
             const listaUI = document.getElementById('lista-hospitais');
             btn.innerHTML = "⏳"; 
-            listaUI.innerHTML = '<li style="padding: 15px; text-align: center;">A procurar o hospital mais próximo...</li>';
+            listaUI.innerHTML = '<li style="padding: 15px; text-align: center;">A aceder ao banco de dados local...</li>';
             
             try {
-                const raioHospitais = 3500; // Reduzido para evitar bloqueios
-                const queryHospitais = `[out:json][timeout:10];(node["amenity"="hospital"](around:${raioHospitais},${latUsuario},${lngUsuario});node["amenity"="clinic"](around:${raioHospitais},${latUsuario},${lngUsuario}););out body;`;
-                
-                const dadosHospitais = await fetchComTentativas(queryHospitais);
-
-                if (dadosHospitais.elements.length === 0) {
-                    listaUI.innerHTML = '<li style="padding: 15px; text-align: center; color: red;">Nenhum hospital encontrado no raio de 3.5km.</li>';
-                    return;
-                }
+                const resposta = await fetch('hospitais_es.json');
+                const dadosHospitais = await resposta.json();
 
                 hospitaisEncontrados = [];
+                
                 dadosHospitais.elements.forEach(hosp => {
                     if (hosp.lat && hosp.lon) {
-                        hosp.distReta = calcularDistancia(latUsuario, lngUsuario, hosp.lat, hosp.lon);
-                        hosp.nome = hosp.tags.name || "Unidade de Saúde";
-                        hospitaisEncontrados.push(hosp);
+                        const distReta = calcularDistancia(latUsuario, lngUsuario, hosp.lat, hosp.lon);
+                        
+                        if (distReta <= 10000) {
+                            hosp.distReta = distReta;
+                            hosp.nome = hosp.tags.name || "Unidade de Saúde";
+                            hospitaisEncontrados.push(hosp);
+                        }
                     }
                 });
 
+                if (hospitaisEncontrados.length === 0) {
+                    listaUI.innerHTML = '<li style="padding: 15px; text-align: center; color: red;">Nenhum hospital encontrado perto de si.</li>';
+                    return;
+                }
+
                 hospitaisEncontrados.sort((a, b) => a.distReta - b.distReta);
                 
-                map.eachLayer((layer) => { if (layer instanceof L.Marker && layer !== userMarker) map.removeLayer(layer); });
+                // Limpa rota e pinos antigos, mantendo mapa de fundo e GPS
+                if (rotaDesenhada) map.removeLayer(rotaDesenhada);
+                map.eachLayer((layer) => { 
+                    if (layer instanceof L.Marker && layer !== userMarker) map.removeLayer(layer); 
+                });
+                
                 listaUI.innerHTML = '';
 
-                hospitaisEncontrados.forEach(hosp => {
-                    const hospitalIcon = L.icon({
-                        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
-                        iconAnchor: [12, 41], popupAnchor: [1, -34]
-                    });
-                    L.marker([hosp.lat, hosp.lon], { icon: hospitalIcon }).addTo(map).bindPopup(`<b>${hosp.nome}</b>`);
-                });
-
+                // Apenas preenche a lista e processa o primeiro hospital
                 adicionarHospitalNaLista(hospitaisEncontrados[0], 0, true);
                 tracarRotaParaHospital(hospitaisEncontrados[0], 0);
 
@@ -359,50 +327,82 @@
                 }
 
             } catch (erro) {
-                listaUI.innerHTML = '<li style="padding: 15px; text-align: center; color: red;">Todos os servidores públicos estão ocupados. Tente novamente daqui a pouco.</li>';
+                listaUI.innerHTML = '<li style="padding: 15px; text-align: center; color: red;">Erro ao aceder ao banco local. Está a usar o Live Server?</li>';
                 console.error(erro);
             } finally {
-                btn.innerHTML = "🔍"; 
+                btn.innerHTML = ""; 
             }
         });
 
         // ==========================================
-        // 6. CLIQUE: TRAÇAR ROTA
+        // 5. CLIQUE: TRAÇAR ROTA (100% OFFLINE E INSTANTÂNEO)
         // ==========================================
         async function tracarRotaParaHospital(hospitalAlvo, indexUI) {
             document.querySelectorAll('.status').forEach(el => el.style.display = 'none');
+            
+            // Remove realce visual dos outros itens da lista
+            document.querySelectorAll('.hospital-item').forEach(el => {
+                el.classList.remove('hospital-destaque');
+                el.querySelector('h4').innerText = el.querySelector('h4').innerText.replace('⭐ ', '');
+            });
+
+            // Adiciona realce visual ao item clicado
+            const itemClicado = document.querySelectorAll('.hospital-item')[indexUI];
+            if (itemClicado) {
+                itemClicado.classList.add('hospital-destaque');
+                const h4 = itemClicado.querySelector('h4');
+                if (!h4.innerText.includes('⭐')) h4.innerText = '⭐ ' + h4.innerText;
+            }
+
             const statusBox = document.getElementById(`status-${indexUI}`);
             statusBox.style.display = 'block';
-            statusBox.innerText = 'A transferir mapa das ruas...';
+            statusBox.innerText = 'A carregar mapa viário local...';
             statusBox.style.color = '#0066cc';
 
             try {
-                let minLat = Math.min(latUsuario, hospitalAlvo.lat) - 0.005;
-                let maxLat = Math.max(latUsuario, hospitalAlvo.lat) + 0.005;
-                let minLng = Math.min(lngUsuario, hospitalAlvo.lon) - 0.005;
-                let maxLng = Math.max(lngUsuario, hospitalAlvo.lon) + 0.005;
+                // 1. Apaga apenas a rota azul antiga
+                if (rotaDesenhada) {
+                    map.removeLayer(rotaDesenhada);
+                }
 
-                const queryRuas = `[out:json][timeout:15];(way["highway"~"primary|secondary|tertiary|residential"](${minLat},${minLng},${maxLat},${maxLng}););out body;>;out skel qt;`;
+                // 2. Apaga apenas os pinos vermelhos antigos
+                map.eachLayer((layer) => { 
+                    if (layer instanceof L.Marker && layer !== userMarker) {
+                        map.removeLayer(layer); 
+                    }
+                });
+
+                // 3. Adiciona O PIN ÚNICO do hospital alvo no mapa
+                const hospitalIcon = L.icon({
+                    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+                    iconAnchor: [12, 41], popupAnchor: [1, -34]
+                });
                 
-                const dadosRuas = await fetchComTentativas(queryRuas, statusBox);
+                L.marker([hospitalAlvo.lat, hospitalAlvo.lon], { icon: hospitalIcon })
+                    .addTo(map)
+                    .bindPopup(`<b>${hospitalAlvo.nome}</b>`)
+                    .openPopup();
 
-                statusBox.innerText = 'A estruturar a malha viária...';
-                await new Promise(resolve => setTimeout(resolve, 50)); 
+                // LÊ O BANCO DE RUAS LOCAL
+                const respostaRuas = await fetch('ruas_serra.json');
+                const dadosRuas = await respostaRuas.json();
+
+                statusBox.innerText = 'A estruturar o Grafo em memória...';
+                await new Promise(resolve => setTimeout(resolve, 10));
                 
                 const { grafo, nos } = construirGrafo(dadosRuas);
 
-                statusBox.innerText = 'A calcular (Min-Heap)...';
-                await new Promise(resolve => setTimeout(resolve, 50));
+                statusBox.innerText = 'A calcular Rota (Min-Heap)...';
+                await new Promise(resolve => setTimeout(resolve, 10));
 
                 const noUsuario = encontrarNoMaisProximo(latUsuario, lngUsuario, nos);
                 const noHospital = encontrarNoMaisProximo(hospitalAlvo.lat, hospitalAlvo.lon, nos);
                 
                 const { antecessores, distancias } = dijkstra(grafo, noUsuario, noHospital);
-
                 const distanciaReal = distancias.get(noHospital);
-
                 const caminhoCoordenadas = [];
                 let atual = noHospital;
+                
                 while (atual && atual !== noUsuario) {
                     const coord = nos.get(atual);
                     caminhoCoordenadas.unshift([coord.lat, coord.lon]);
@@ -413,20 +413,19 @@
                     const coord = nos.get(noUsuario);
                     caminhoCoordenadas.unshift([coord.lat, coord.lon]);
 
-                    if (rotaDesenhada) map.removeLayer(rotaDesenhada);
                     rotaDesenhada = L.polyline(caminhoCoordenadas, { color: 'blue', weight: 6, opacity: 0.7 }).addTo(map);
                     map.fitBounds(rotaDesenhada.getBounds(), { padding: [30, 30] });
 
                     statusBox.style.color = '#28a745';
-                    statusBox.innerText = `Pronto! Distância de tráfego: ${(distanciaReal / 1000).toFixed(2)} km`;
+                    statusBox.innerText = `Pronto! Rota gerada: ${(distanciaReal / 1000).toFixed(2)} km`;
                 } else {
                     statusBox.style.color = 'red';
-                    statusBox.innerText = 'Caminho não suportado para viaturas.';
+                    statusBox.innerText = 'Caminho não suportado pela malha local.';
                 }
 
             } catch (erro) {
                 statusBox.style.color = 'red';
-                statusBox.innerText = 'Erro de comunicação de rede.';
+                statusBox.innerText = 'Erro ao ler arquivo "ruas_serra.json".';
                 console.error(erro);
             }
         }
