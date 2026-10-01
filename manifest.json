@@ -1,0 +1,15 @@
+{
+  "name": "App Emergência",
+  "short_name": "SOS Rotas",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff0000",
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png",
+      "sizes": "25x41",
+      "type": "image/png"
+    }
+  ]
+}

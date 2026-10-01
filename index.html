@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>App Emergência - Rota Otimizada</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
     <style>
@@ -70,25 +73,46 @@
         #map-container { flex: 1; position: relative; }
         #map { height: 100%; width: 100%; z-index: 1; }
 
-        #btn-buscar {
+#buscar-wrapper {
             position: absolute;
             bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
+            display: flex;
+            flex-direction: column; /* Coloca o texto abaixo do botão */
+            align-items: center;
+        }
+
+        #btn-buscar {
             background-color: #ff0000; 
             color: white;
             border: 2px solid #cc0000;
             width: 60px; 
             height: 60px;
-            border-radius: 50%; /* Botão Redondo */
-            font-size: 24px;
+            border-radius: 50%; 
+            font-size: 20px;
+            font-weight: bold;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
             cursor: pointer;
             transition: transform 0.1s;
+        }
+
+        #btn-buscar:active { transform: scale(0.90); }
+
+        #buscar-texto {
+            margin-top: 8px;
+            font-size: 13px;
+            font-weight: bold;
+            color: #333;
+            background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semitransparente */
+            padding: 4px 10px;
+            border-radius: 12px;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+            white-space: nowrap; /* Impede o texto de quebrar em duas linhas */
         }
 
         #btn-buscar:active { transform: translateX(-50%) scale(0.90); }
@@ -112,20 +136,20 @@
 
         <div id="map-container">
             <div id="map"></div>
-            <!-- Botão de Ambulância -->
-            <button id="btn-buscar" title="Buscar Hospitais">🚑</button>
+            <div id="buscar-wrapper">
+                <button id="btn-buscar" title="Aperte para buscar hospitais">S.O.S</button>
+                <div id="buscar-texto">Aperte para buscar hospitais</div>
+            </div>
         </div>
-    </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        // ==========================================
-        // 1. CONFIGURAÇÃO INICIAL (GPS EM TEMPO REAL)
-        // ==========================================
-        let latUsuario = -20.2289; 
-        let lngUsuario = -40.2733;
+        // config
+    
+        let latUsuario = -20.19297; 
+        let lngUsuario = -40.22120;
 
-        const map = L.map('map', { zoomControl: false }).setView([latUsuario, lngUsuario], 14);
+        const map = L.map('map', { zoomControl: false }).setView([latUsuario, lngUsuario], 15);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
 
         const iconeGPS = L.divIcon({
@@ -140,25 +164,11 @@
         
         let rotaDesenhada = null;
         let hospitaisEncontrados = [];
-
-        // Rastreio via Satélite
-        if ('geolocation' in navigator) {
-            navigator.geolocation.watchPosition(
-                (posicao) => {
-                    latUsuario = posicao.coords.latitude;
-                    lngUsuario = posicao.coords.longitude;
-                    userMarker.setLatLng([latUsuario, lngUsuario]);
-                },
-                (erro) => { console.warn("Aviso de permissão de GPS:", erro.message); },
-                { enableHighAccuracy: true, maximumAge: 0, timeout: 5000 }
-            );
-        }
-
-        // ==========================================
-        // 2. BANCO DE DADOS LOCAL (INDEXED-DB)
-        // ==========================================
+        // IndexedDB para armazenar o grafo de ruas e nós, Banco de dados que armazena as informações no navegador do usuário, permitindo que o aplicativo funcione offline após a primeira execução.
         const DB_NAME = "EmergenciaAppDB";
         
+
+        // abre banco de dados IndexedDB, criando a estrutura se necessário
         function abrirBanco() {
             return new Promise((resolve, reject) => {
                 const request = indexedDB.open(DB_NAME, 1);
@@ -172,7 +182,7 @@
                 };
             });
         }
-
+        // salva a malha viária/dados dentro do banco de dados, permitindo que o aplicativo funcione offline após a primeira execução.
         async function salvarNoBanco(chave, dados) {
             const db = await abrirBanco();
             return new Promise((resolve, reject) => {
@@ -183,7 +193,7 @@
                 tx.onerror = () => reject();
             });
         }
-
+        // função utilitária para ler os dados dentro do banco de dados -> ler a malha viária/dados do banco de dados.
         async function lerDoBanco(chave) {
             const db = await abrirBanco();
             return new Promise((resolve, reject) => {
@@ -195,9 +205,7 @@
             });
         }
 
-        // ==========================================
-        // 3. MIN-HEAP (ÁRVORE BINÁRIA)
-        // ==========================================
+        // Arvore binária mínima, ele vai separar todas as rotas, indicando dos menores para maiores de foram crescente, mandando essas informações para o algoritmo de Dijkstra. Em si, serve para otimizar a busca e não travar o celular do usuário, evitando grandes usos de memória e processamento.
         class MinHeap {
             constructor() { this.heap = []; }
             inserir(no) { this.heap.push(no); this.subir(this.heap.length - 1); }
@@ -233,11 +241,10 @@
             vazia() { return this.heap.length === 0; }
         }
 
-        // ==========================================
-        // 4. MOTOR DO GRAFO E DIJKSTRA
-        // ==========================================
+        // Djisktra e outras funções auxiliares
         function calcularDistancia(lat1, lon1, lat2, lon2) {
-            const R = 6371e3; 
+            // Fórmula de Haversine
+            const R = 6371e3; //6.371 quilómetros
             const p1 = lat1 * Math.PI/180;
             const p2 = lat2 * Math.PI/180;
             const dp = (lat2-lat1) * Math.PI/180;
@@ -281,7 +288,7 @@
             }
             return noMaisProximo;
         }
-
+        // Algoritmo Dijkstra, calcula a menor rota entre o usuário e o hospital, considerando a malha viária local. Ele vai calcular a rota mais curta entre o ponto de partida (usuário) e o ponto de destino (hospital), levando em conta as ruas e caminhos disponíveis no mapa. Ele le o arquivo json ruas_serra.json.
         function dijkstra(grafo, idOrigem, idDestino) {
             const distancias = new Map();
             const antecessores = new Map(); 
@@ -309,7 +316,7 @@
             }
             return { antecessores, distancias };
         }
-
+            // Constrói a lista de hospitais na interface do usuário, destacando o hospital mais próximo e permitindo que o usuário clique para traçar a rota.
         function adicionarHospitalNaLista(hosp, index, isDestaque = false) {
             const listaUI = document.getElementById('lista-hospitais');
             const li = document.createElement('li');
@@ -322,36 +329,76 @@
             listaUI.appendChild(li);
         }
 
-        // ==========================================
-        // 5. CLIQUE: BUSCAR HOSPITAIS (BANCO LOCAL)
-        // ==========================================
+            // Busca hospitais e unidades de saúde próximos ao usuário, considerando um raio de 15 km, e exibe-os na lista lateral. O hospital mais próximo é destacado e a rota para ele é traçada automaticamente.
         document.getElementById('btn-buscar').addEventListener('click', async () => {
             const btn = document.getElementById('btn-buscar');
             const listaUI = document.getElementById('lista-hospitais');
             btn.innerHTML = "⏳"; 
-            listaUI.innerHTML = '<li style="padding: 15px; text-align: center;">A aceder ao banco de dados local...</li>';
+            listaUI.innerHTML = '<li style="padding: 15px; text-align: center;">A procurar hospitais e unidades...</li>';
             
             try {
                 const resposta = await fetch('hospitais_es.json');
                 const dadosHospitais = await resposta.json();
 
+                // Mapeia todos os nós para conseguir calcular o centro de hospitais grandes (polígonos)
+                const nosMapa = new Map();
+                dadosHospitais.elements.forEach(el => {
+                    if (el.type === 'node') {
+                        nosMapa.set(el.id, { lat: el.lat, lon: el.lon });
+                    }
+                });
+
                 hospitaisEncontrados = [];
                 dadosHospitais.elements.forEach(hosp => {
-                    if (hosp.lat && hosp.lon) {
-                        const distReta = calcularDistancia(latUsuario, lngUsuario, hosp.lat, hosp.lon);
-                        if (distReta <= 10000) {
+                    // Verifica se tem tag de nome
+                    if (!hosp.tags || !hosp.tags.name) return;
+
+                    let hLat = hosp.lat;
+                    let hLon = hosp.lon;
+
+                    // Se for uma área (way) com centro definido pelo OpenStreetMap
+                    if (!hLat && hosp.center) {
+                        hLat = hosp.center.lat;
+                        hLon = hosp.center.lon;
+                    }
+
+                    // Se for uma área sem centro, calcula a média dos pontos do contorno
+                    if (!hLat && hosp.nodes && hosp.nodes.length > 0) {
+                        let somaLat = 0, somaLon = 0, count = 0;
+                        hosp.nodes.forEach(nodeId => {
+                            const n = nosMapa.get(nodeId);
+                            if (n) {
+                                somaLat += n.lat;
+                                somaLon += n.lon;
+                                count++;
+                            }
+                        });
+                        if (count > 0) {
+                            hLat = somaLat / count;
+                            hLon = somaLon / count;
+                        }
+                    }
+
+                    // Se encontrou coordenadas válidas, calcula a distância
+                    if (hLat && hLon) {
+                        const distReta = calcularDistancia(latUsuario, lngUsuario, hLat, hLon);
+                        // Raio de busca de 15 km para garantir que o Jayme caiba na lista
+                        if (distReta <= 15000) {
                             hosp.distReta = distReta;
-                            hosp.nome = hosp.tags.name || "Unidade de Saúde";
+                            hosp.nome = hosp.tags.name;
+                            hosp.lat = hLat;
+                            hosp.lon = hLon;
                             hospitaisEncontrados.push(hosp);
                         }
                     }
                 });
 
                 if (hospitaisEncontrados.length === 0) {
-                    listaUI.innerHTML = '<li style="padding: 15px; text-align: center; color: red;">Nenhum hospital encontrado perto de si.</li>';
+                    listaUI.innerHTML = '<li style="padding: 15px; text-align: center; color: red;">Nenhum hospital encontrado num raio de 15km.</li>';
                     return;
                 }
 
+                // Ordena do mais próximo para o mais distante
                 hospitaisEncontrados.sort((a, b) => a.distReta - b.distReta);
                 
                 if (rotaDesenhada) map.removeLayer(rotaDesenhada);
@@ -376,15 +423,14 @@
                     listaUI.appendChild(btnMais);
                 }
             } catch (erro) {
+                listaUI.innerHTML = `<li style="padding: 15px; text-align: center; color: red; font-weight: bold;">Erro Detetado: ${erro.message}</li>`;
                 console.error(erro);
             } finally {
-                btn.innerHTML = "🚑"; 
+                btn.innerHTML = "SOS"; 
             }
         });
 
-        // ==========================================
-        // 6. CLIQUE: TRAÇAR ROTA (COM INDEXED-DB)
-        // ==========================================
+        // Traça a rota do usuário até o hospital selecionado, utilizando o algoritmo de Dijkstra e a malha viária local. Atualiza a interface para destacar o hospital selecionado e exibir o status da operação.
         async function tracarRotaParaHospital(hospitalAlvo, indexUI) {
             document.querySelectorAll('.status').forEach(el => el.style.display = 'none');
             document.querySelectorAll('.hospital-item').forEach(el => {
@@ -425,7 +471,6 @@
 
                 if (!dadosSalvos) {
                     statusBox.innerText = 'Instalação inicial. Lendo arquivo (Pode demorar)...';
-                    // ATENÇÃO: Se o seu arquivo se chama ruas_es.json, mude o nome aqui!
                     const respostaRuas = await fetch('ruas_serra.json'); 
                     const dadosRuas = await respostaRuas.json();
 
@@ -484,6 +529,13 @@
                 statusBox.innerText = 'Erro crítico. Verifique o console.';
                 console.error(erro);
             }
+        }
+    </script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+            .then(() => console.log('Service Worker Registado com Sucesso!'))
+            .catch((erro) => console.error('Erro no Service Worker:', erro));
         }
     </script>
 </body>
