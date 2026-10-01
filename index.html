@@ -1,11 +1,12 @@
-// technologias utilizadas: HTML, CSS, JavaScript, Leaflet.js, IndexedDB, Service Worker, OpenStreetMap API
-/* CSS -> FrontEnd
+<!--
+   technologias utilizadas: HTML, CSS, JavaScript, Leaflet.js, IndexedDB, Service Worker, OpenStreetMap API
+   CSS -> FrontEnd
    JavaScript -> Lógica do Software e FrontEnd
    Leaflet.js -> Biblioteca de mapas para exibir mapas interativos
    IndexedDB -> Armazenamento local de dados (malha viária)
    Service Worker(sw.js) -> Permite que o aplicativo funcione offline
    OpenStreetMap API -> Fornece dados de mapas e geolocalização (os 2 jsons, ruas e hospitais, são extraídos do OpenStreetMap)
-*/
+-->
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -16,7 +17,7 @@
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" /> //  leaftnet, importa algumas imagens e estilos para o mapa
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" /> <!-- leaftnet, importa algumas imagens e estilos para o mapa -->
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -150,7 +151,7 @@
                 <div id="buscar-texto">Aperte para buscar hospitais</div>
             </div>
         </div>
-        // Importa a ferramenta do leafnet
+        <!--Importa a ferramenta do leafnet -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
         // config
