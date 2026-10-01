@@ -3,7 +3,6 @@ self.addEventListener('install', (e) => {
       caches.open('sos-cache-v2').then((cache) => cache.addAll([
         './index.html',
         './hospitais_es.json'
-        // Removemos o ficheiro gigante de ruas daqui. O IndexedDB tratará dele!
       ]))
     );
 });

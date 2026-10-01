@@ -1,3 +1,12 @@
+// technologias utilizadas: HTML, CSS, JavaScript, Leaflet.js, IndexedDB, Service Worker, OpenStreetMap API
+/* CSS -> FrontEnd
+   JavaScript -> Lógica do Software e FrontEnd
+   Leaflet.js -> Biblioteca de mapas para exibir mapas interativos
+   IndexedDB -> Armazenamento local de dados (malha viária)
+   Service Worker(sw.js) -> Permite que o aplicativo funcione offline
+   OpenStreetMap API -> Fornece dados de mapas e geolocalização (os 2 jsons, ruas e hospitais, são extraídos do OpenStreetMap)
+*/
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,7 +16,7 @@
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" /> //  leaftnet, importa algumas imagens e estilos para o mapa
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -141,7 +150,7 @@
                 <div id="buscar-texto">Aperte para buscar hospitais</div>
             </div>
         </div>
-
+        // Importa a ferramenta do leafnet
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
         // config
@@ -149,8 +158,8 @@
         let latUsuario = -20.19297; 
         let lngUsuario = -40.22120;
 
-        const map = L.map('map', { zoomControl: false }).setView([latUsuario, lngUsuario], 15);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
+        const map = L.map('map', { zoomControl: false }).setView([latUsuario, lngUsuario], 15); // Desenhar um mapa dentro da div "map"
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map); // Pinta os blocos visuais das ruas (os "titles")
 
         const iconeGPS = L.divIcon({
             className: 'gps-marker',
@@ -209,7 +218,7 @@
         class MinHeap {
             constructor() { this.heap = []; }
             inserir(no) { this.heap.push(no); this.subir(this.heap.length - 1); }
-            extrairMinimo() {
+            extrairMinimo() { // extrairminimo é utilizado por Dijkstra para pegar o nó com a menor distância atual, garantindo que o algoritmo explore primeiro os caminhos mais promissores.
                 if (this.heap.length === 0) return null;
                 if (this.heap.length === 1) return this.heap.pop();
                 const min = this.heap[0];
@@ -300,7 +309,7 @@
             fila.inserir({ id: idOrigem, dist: 0 });
 
             while (!fila.vazia()) {
-                const atual = fila.extrairMinimo(); 
+                const atual = fila.extrairMinimo(); // pega do min-heap o nó com a menor distância atual
                 if (atual.dist > distancias.get(atual.id)) continue;
                 if (atual.id === idDestino) break;
 
